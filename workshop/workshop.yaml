@@ -1,0 +1,8 @@
+name: TKG on AWS
+
+modules:
+    activate:
+    - workshop-overview
+    - setup-environment
+    - exercises/01-run-installer-ui
+    - workshop-summary

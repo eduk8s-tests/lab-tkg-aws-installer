@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+  workshop:
+    build: .
+    user: "root"
+    environment:
+    - INGRESS_PORT_SUFFIX=:10080
+    ports:
+    - "10080:10080"
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+    - workshop-console:127.0.0.1

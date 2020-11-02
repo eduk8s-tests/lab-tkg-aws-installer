@@ -1,0 +1,17 @@
+spec:
+  session:
+    applications:
+      terminal:
+        enabled: true
+        layout: split/2
+      console:
+        enabled: true
+        vendor: octant
+      docker:
+        enabled: true
+    ingresses:
+    - name: installer
+      port: 8080
+    dashboards:
+    - name: Installer
+      url: $(ingress_protocol)://$(session_namespace)-installer.$(ingress_domain)/
