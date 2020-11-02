@@ -4,11 +4,6 @@ spec:
       terminal:
         enabled: true
         layout: split/2
-      console:
-        enabled: true
-        vendor: octant
-      docker:
-        enabled: true
     ingresses:
     - name: installer
       port: 8080
