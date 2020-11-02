@@ -1,12 +1,9 @@
 modules:
-    workshop-overview:
-        name: Workshop Overview
-        exit_sign: Setup Environment
-    setup-environment:
-        name: Setup Environment
-        exit_sign: Start Workshop
-    exercises/01-run-installer-ui:
-        name: Run Installer UI
-    workshop-summary:
-        name: Workshop Summary
-        exit_sign: Finish Workshop
+    installer-overview:
+        name: Installer Overview
+    download-the-tkg-cli:
+        name: Download the "tkg" CLI
+    run-the-installer-ui:
+        name: Run the Installer UI
+    additional-resources:
+        name: Additional Resources

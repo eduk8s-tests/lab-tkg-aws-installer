@@ -1,9 +1,11 @@
 Guided installer for TKG on AWS
 ===============================
 
-This is a guided installer for deploying a Tanzu Kubernetes Grid management
-cluster to AWS, and also provides some examples for creating additional
-workload clusters.
+This is a guided installer for deploying a Tanzu Kubernetes Grid (TKG)
+management cluster to Amazon Web Services (AWS).
+
+The installer also provides some examples for creating additional workload
+clusters and managing them.
 
 The installer is intended to be run on your local docker service using
 ``docker-compose``. You will then be provided with a web interface which
