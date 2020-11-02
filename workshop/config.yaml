@@ -9,4 +9,4 @@ spec:
       port: 8080
     dashboards:
     - name: Installer
-      url: $(ingress_protocol)://$(session_namespace)-installer.$(ingress_domain)/
+      url: $(ingress_protocol)://$(session_namespace)-installer.$(ingress_domain)$(ingress_port_suffix)/

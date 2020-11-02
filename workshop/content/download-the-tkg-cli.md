@@ -18,13 +18,14 @@ This should generate a listing starting with:
 
 Before you can use ``vmw-cli`` to download any application packages, you will need to already have an account on the my.vmware.com website. If you don't have an account, create one.
 
-> Note: If you were wanting the ``tkg`` command line tool on your own machine you could login to the my.vmware.com website using a browser and download the client directly to your own computer. Uploading the client from you own computer into the installer environment is a bit harder, so we will use the ``vmw-cli`` script to download the client instead.
+> Note: If you needed the ``tkg`` command line tool on your own machine you could login to the my.vmware.com website using a browser and download the client directly to your own computer. Uploading the client from you own computer into the installer environment is a bit harder, so we will use the ``vmw-cli`` script to download the client instead.
 
 So that they are available to ``vmw-cli``, enter your my.vmware.com credentials here in the installer environment. To enter your credentials run the following and enter them when prompted.
 
 ```execute-1
 read -p "Enter your my.vmware.com username: " VMWUSER && export VMWUSER && \
-read -s -p "Enter your my.vmware.com password: " VMWPASS && export VMWPASS
+read -s -p "Enter your my.vmware.com password: " VMWPASS && export VMWPASS && \
+echo
 ```
 
 Once entered, the credentials will be saved in the ``VMWUSER`` and ``VMWPASS`` environment variables.
@@ -96,7 +97,5 @@ chmod +x $HOME/bin/*
 Verify that the ``tkg`` command can be found by running:
 
 ```execute
-tkg help
+tkg version
 ```
-
-The help documentation for ``tkg`` should be output.

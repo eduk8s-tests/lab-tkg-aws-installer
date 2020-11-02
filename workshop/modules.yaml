@@ -3,6 +3,8 @@ modules:
         name: Installer Overview
     download-the-tkg-cli:
         name: Download the "tkg" CLI
+    aws-ec2-requirements:
+        name: AWS EC2 Requirements
     run-the-installer-ui:
         name: Run the Installer UI
     additional-resources:

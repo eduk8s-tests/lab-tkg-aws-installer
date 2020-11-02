@@ -10,4 +10,4 @@ services:
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     extra_hosts:
-    - workshop-console:127.0.0.1
+    - workshop-installer:127.0.0.1

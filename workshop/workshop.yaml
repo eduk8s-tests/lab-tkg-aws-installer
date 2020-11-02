@@ -4,5 +4,6 @@ modules:
     activate:
     - installer-overview
     - download-the-tkg-cli
+    - aws-ec2-requirements
     - run-the-installer-ui
     - additional-resources
