@@ -1,7 +1,7 @@
 In order to create Tanzu Kubernetes Grid clusters in AWS, you need to satisfy the following requirements:
 
 * You must have the access key and access key secret for an active AWS account.
-* The AWS account must have Administrator privileges.
+* The AWS account must have Administrator privileges and cannot be a managed account under a service such as VMware CloudGate.
 * The AWS account must have sufficient resource quotas for creating Virtual Private Cloud (VPC) instances and Elastic IP (EIP) addresses.
 * The AWS account must have an SSH key pair registered against the AWS region you intend to use.
 

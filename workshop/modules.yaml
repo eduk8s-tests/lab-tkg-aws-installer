@@ -7,5 +7,9 @@ modules:
         name: AWS EC2 Requirements
     run-the-installer-ui:
         name: Run the Installer UI
+    aws-ec2-credentials:
+        name: AWS EC2 Credentials
+    vpc-settings-for-aws:
+        name: VPC Setting for AWS
     additional-resources:
         name: Additional Resources

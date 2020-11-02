@@ -6,4 +6,6 @@ modules:
     - download-the-tkg-cli
     - aws-ec2-requirements
     - run-the-installer-ui
+    - aws-ec2-credentials
+    - vpc-settings-for-aws
     - additional-resources
