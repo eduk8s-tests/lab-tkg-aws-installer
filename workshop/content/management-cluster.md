@@ -2,7 +2,7 @@ The next form to be filled in is where you need to provide details about the Kub
 
 ![](management-cluster-form.png)
 
-If the Kubernetes management cluster is only going to be used for testing or management of disposable development workload clusters, you would likely choose the **Development** cluster type. For this type of cluster, only a single control plane node will be created.
+If the Kubernetes management cluster is only going to be used for testing or management of disposable development workload clusters, you would likely choose **Development** for the cluster type. For this type of cluster, only a single control plane node will be created.
 
 The **Production** cluster type in comparison results in three control plane nodes being created, providing a level of redundancy in the event that one of the control plane nodes fails.
 
@@ -14,7 +14,7 @@ Some guidelines for selection of the instance type can be found in the Kubernete
 
 * https://kubernetes.io/docs/setup/best-practices/cluster-large/#size-of-master-and-master-components
 
-For AWS, it specifies sizing for the master node based on the number of worker nodes as follows:
+For AWS, it specifies sizing for the control plane node based on the number of worker nodes as follows:
 
 * 1-5 worker nodes: m3.medium
 * 6-10 worker nodes: m3.large
@@ -34,3 +34,11 @@ You have already selected an EC2 instance type for the control plane nodes, but 
 Controlling factors which will determine what EC2 instance type should be used for the worker nodes are the amount of memory required, CPU performance, and maximum number of storage volumes permitted per node.
 
 Since this is for the Kubernetes management cluster and we will be creating a separate workload cluster into which to deploy applications, only a single worker node will be created adequate for running the cluster management API services. An adequate EC2 instance type for this is "m4.large".
+
+A final required step is to select which availability zone within the region the control plane node is deployed. As the development cluster type was selected it and there is only one control plane node, it doesn't matter which availability zone is selected. If you had instead selected the production cluster type where there is there control plane nodes, you would usually allocated each control plane node to a separate availability zone.
+
+If required you can also disable the creation of a bastion host. This could be done where a bastion host(s) already exists in the availability zone(s) of the AWS region the Kubernetes management cluster is being deployed. We will not be using the bastion host, so you can disable it.
+
+You can also if desired disable health checks and node auto-repair. We will not be relying on this feature, so you can disable it.
+
+When all details have been provided, click on **NEXT** in the form.

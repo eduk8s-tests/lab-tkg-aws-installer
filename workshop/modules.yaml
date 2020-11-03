@@ -13,5 +13,7 @@ modules:
         name: VPC Settings for AWS
     management-cluster:
         name: Management Cluster
+    metadata-for-cluster:
+        name: Metadata for Cluster
     additional-resources:
         name: Additional Resources

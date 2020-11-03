@@ -9,4 +9,5 @@ modules:
     - aws-ec2-credentials
     - vpc-settings-for-aws
     - management-cluster
+    - metadata-for-cluster
     - additional-resources
