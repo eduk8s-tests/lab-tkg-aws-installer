@@ -10,4 +10,7 @@ modules:
     - vpc-settings-for-aws
     - management-cluster
     - metadata-for-cluster
+    - kubernetes-network
+    - improvement-program
+    - review-configuration
     - additional-resources

@@ -33,9 +33,9 @@ You have already selected an EC2 instance type for the control plane nodes, but 
 
 Controlling factors which will determine what EC2 instance type should be used for the worker nodes are the amount of memory required, CPU performance, and maximum number of storage volumes permitted per node.
 
-Since this is for the Kubernetes management cluster and we will be creating a separate workload cluster into which to deploy applications, only a single worker node will be created adequate for running the cluster management API services. An adequate EC2 instance type for this is "m4.large".
+Since this is for the Kubernetes management cluster and we will be creating a separate workload cluster into which to deploy applications, only a single worker node need be created adequate for running the cluster management API services. An adequate EC2 instance type for this is "m4.large".
 
-A final required step is to select which availability zone within the region the control plane node is deployed. As the development cluster type was selected it and there is only one control plane node, it doesn't matter which availability zone is selected. If you had instead selected the production cluster type where there is there control plane nodes, you would usually allocated each control plane node to a separate availability zone.
+A final required step is to select which availability zone within the region the control plane node is deployed. As the development cluster type was selected and there is only one control plane node, it doesn't matter which availability zone is selected. If you had instead selected the production cluster type where there is there control plane nodes, you would usually allocate each control plane node to a separate availability zone.
 
 If required you can also disable the creation of a bastion host. This could be done where a bastion host(s) already exists in the availability zone(s) of the AWS region the Kubernetes management cluster is being deployed. We will not be using the bastion host, so you can disable it.
 

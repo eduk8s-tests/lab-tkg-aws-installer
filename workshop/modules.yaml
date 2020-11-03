@@ -15,5 +15,11 @@ modules:
         name: Management Cluster
     metadata-for-cluster:
         name: Metadata for Cluster
+    kubernetes-network:
+        name: Kubernetes Network
+    improvment-program:
+        name: Improvement Program
+    review-configuration:
+        name: Review Configuration
     additional-resources:
         name: Additional Resources
