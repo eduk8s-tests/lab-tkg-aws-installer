@@ -1,25 +1,25 @@
 modules:
-    installer-overview:
+    01-installer-overview:
         name: Installer Overview
-    download-the-tkg-cli:
+    02-download-the-tkg-cli:
         name: Download the "tkg" CLI
-    aws-ec2-requirements:
+    03-aws-ec2-requirements:
         name: AWS EC2 Requirements
-    run-the-installer-ui:
+    04-run-the-installer-ui:
         name: Run the Installer UI
-    aws-ec2-credentials:
+    05-aws-ec2-credentials:
         name: AWS EC2 Credentials
-    vpc-settings-for-aws:
+    06-vpc-settings-for-aws:
         name: VPC Settings for AWS
-    management-cluster:
+    07-management-cluster:
         name: Management Cluster
-    metadata-for-cluster:
+    08-metadata-for-cluster:
         name: Metadata for Cluster
-    kubernetes-network:
+    09-kubernetes-network:
         name: Kubernetes Network
-    improvement-program:
+    10-improvement-program:
         name: Improvement Program
-    review-configuration:
+    11-review-configuration:
         name: Review Configuration
-    additional-resources:
+    99-additional-resources:
         name: Additional Resources

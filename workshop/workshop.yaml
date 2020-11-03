@@ -2,15 +2,15 @@ name: TKG on AWS
 
 modules:
     activate:
-    - installer-overview
-    - download-the-tkg-cli
-    - aws-ec2-requirements
-    - run-the-installer-ui
-    - aws-ec2-credentials
-    - vpc-settings-for-aws
-    - management-cluster
-    - metadata-for-cluster
-    - kubernetes-network
-    - improvement-program
-    - review-configuration
-    - additional-resources
+    - 01-installer-overview
+    - 02-download-the-tkg-cli
+    - 03-aws-ec2-requirements
+    - 04-run-the-installer-ui
+    - 05-aws-ec2-credentials
+    - 06-vpc-settings-for-aws
+    - 07-management-cluster
+    - 08-metadata-for-cluster
+    - 09-kubernetes-network
+    - 10-improvement-program
+    - 11-review-configuration
+    - 99-additional-resources
