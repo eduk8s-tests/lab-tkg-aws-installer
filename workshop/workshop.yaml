@@ -8,4 +8,5 @@ modules:
     - run-the-installer-ui
     - aws-ec2-credentials
     - vpc-settings-for-aws
+    - management-cluster
     - additional-resources
