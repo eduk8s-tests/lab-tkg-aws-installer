@@ -3,10 +3,10 @@ The management cluster can be setup entirely from the command line, or you can u
 To start up the web interface run:
 
 ```execute-3
-tkg init --ui --browser=none
+tkg init --ui --bind workshop-installer.127.0.0.1.nip.io:8080 --browser=none
 ```
 
-If you were running this command on your own machine you would leave out the ``--browser=none`` option. Leaving out that option would result in your web browser being open automatically on the TKG installer web interface.
+If you were running this on your own machine, you would use only ``tkg init --ui``. The ``--bind`` and ``--browser`` options are required in this case because of how the installer environment works.
 
 In this installer environment to open the web interface click on the **Installer** tab.
 
