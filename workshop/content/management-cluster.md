@@ -1,6 +1,6 @@
 The next form to be filled in is where you need to provide details about the Kubernetes management cluster to be created. This includes the intended purpose of the Kubernetes cluster (development vs production), the cluster name, the EC2 instance types to be used for the control plane and worker nodes, the AWS availability zone etc.
 
-![](management-cluster-form.png)
+![](images/management-cluster-form.png)
 
 If the Kubernetes management cluster is only going to be used for testing or management of disposable development workload clusters, you would likely choose **Development** for the cluster type. For this type of cluster, only a single control plane node will be created.
 
@@ -29,16 +29,16 @@ Note that the "m3" instance types are old and are not available in all regions s
 
 Having selected the EC2 instance type for the control plane nodes, give a name to your Kubernetes management cluster, or leave it blank if you want a name to be generated for you. If you do specify a name, that name must be compliant with DNS hostname requirements.
 
-You have already selected an EC2 instance type for the control plane nodes, but you now need to also select the EC2 instance type for the worker nodes. These nodes have different requirements to the control plane nodes and what you use will depend on the type of application workloads you deploy.
+In addition to selecting an EC2 instance type for the control plane nodes, you now need to also select the EC2 instance type for the worker nodes. These nodes have different requirements to the control plane nodes and what you use will depend on the type of application workloads you deploy.
 
 Controlling factors which will determine what EC2 instance type should be used for the worker nodes are the amount of memory required, CPU performance, and maximum number of storage volumes permitted per node.
 
 Since this is for the Kubernetes management cluster and we will be creating a separate workload cluster into which to deploy applications, only a single worker node need be created adequate for running the cluster management API services. An adequate EC2 instance type for this is "m4.large".
 
-A final required step is to select which availability zone within the region the control plane node is deployed. As the development cluster type was selected and there is only one control plane node, it doesn't matter which availability zone is selected. If you had instead selected the production cluster type where there is there control plane nodes, you would usually allocate each control plane node to a separate availability zone.
+A final required step is to select which availability zone within the region the control plane node is deployed. As the development cluster type was selected and there is only one control plane node, it doesn't matter which availability zone is selected. If you had instead selected the production cluster type where there is three control plane nodes, you would usually allocate each control plane node to a separate availability zone.
 
-If required you can also disable the creation of a bastion host. This could be done where a bastion host(s) already exists in the availability zone(s) of the AWS region the Kubernetes management cluster is being deployed. We will not be using the bastion host, so you can disable it.
+If required you can also disable the creation of a bastion host. This could be done where a bastion host(s) already exists in the availability zone(s) of the AWS region the Kubernetes management cluster is being deployed. We will not be using the bastion host so you can disable it.
 
-You can also if desired disable health checks and node auto-repair. We will not be relying on this feature, so you can disable it.
+You can also if desired disable health checks and node auto-repair. We will not be relying on this feature so you can disable it.
 
 When all details have been provided, click on **NEXT** in the form.

@@ -16,7 +16,7 @@ name: Installer
 
 You should be presented with:
 
-![](tkg-installer-ui.png)
+![](images/tkg-installer-ui.png)
 
 The browser based web interface provides three choices as to where a TKG cluster can be installed. These are:
 
@@ -24,4 +24,4 @@ The browser based web interface provides three choices as to where a TKG cluster
 * AWS EC2
 * Microsoft Azure
 
-For these instructions we will be using the AWS EC2 option.
+For this guided installer we will be using the AWS EC2 option.
