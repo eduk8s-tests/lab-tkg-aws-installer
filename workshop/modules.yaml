@@ -21,5 +21,7 @@ modules:
         name: Improvement Program
     11-review-configuration:
         name: Review Configuration
+    12-deploying-the-cluster:
+        name: Deploying the Cluster
     99-additional-resources:
         name: Additional Resources

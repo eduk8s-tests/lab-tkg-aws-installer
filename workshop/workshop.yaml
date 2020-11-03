@@ -13,4 +13,5 @@ modules:
     - 09-kubernetes-network
     - 10-improvement-program
     - 11-review-configuration
+    - 12-deploying-the-cluster
     - 99-additional-resources

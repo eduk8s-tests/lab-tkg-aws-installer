@@ -1,4 +1,4 @@
-We are almost done with configuration of the Kubernetes management cluster. In this next form you need to specify the CIDR block allocations for the service and pod networks within the Kubernetes clusters.
+We are almost done with configuration of the management cluster. In this next form you need to specify the CIDR block allocations for the service and pod networks within the Kubernetes cluster.
 
 ![](images/kubernetes-network-form.png)
 

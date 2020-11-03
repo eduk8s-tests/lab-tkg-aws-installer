@@ -1,4 +1,4 @@
-The initial TKG management cluster can be setup entirely from the command line, or you can use a browser based web interface. We will use the browser based web interface.
+The management cluster can be setup entirely from the command line, or you can use a browser based web interface. We will use the browser based web interface.
 
 To start up the web interface run:
 
@@ -18,7 +18,7 @@ You should be presented with:
 
 ![](images/tkg-installer-ui.png)
 
-The browser based web interface provides three choices as to where a TKG cluster can be installed. These are:
+The browser based web interface provides three choices as to where the management cluster can be installed. These are:
 
 * VMware vSphere
 * AWS EC2
