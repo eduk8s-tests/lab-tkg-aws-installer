@@ -10,7 +10,7 @@ modules:
     aws-ec2-credentials:
         name: AWS EC2 Credentials
     vpc-settings-for-aws:
-        name: VPC Setting for AWS
+        name: VPC Settings for AWS
     management-cluster:
         name: Management Cluster
     additional-resources:
