@@ -7,7 +7,16 @@ name: Launcher
 url: terminal:tkg-installer
 ```
 
-If you were launching the installer on your own local computer, you would run ``tkg init --ui``.
+You should see output similar to:
+
+```
+Executing: tkg init --ui
+
+Logs of the command execution can also be found at: /tmp/tkg-20201104T001729210724048.log
+
+Validating the pre-requisites...
+Serving kickstart UI at http://127.0.0.1:8080
+```
 
 Now click below to open a dashboard tab on the installer web interface.
 
@@ -27,3 +36,5 @@ The browser based web interface provides three choices as to where the managemen
 * Microsoft Azure
 
 For this guided installer we will be using the AWS EC2 option.
+
+> Note: If you were launching the installer on your own local computer, you would run ``tkg init --ui`` from the terminal and your browser would be automatically opened on the web interface for the installer.
