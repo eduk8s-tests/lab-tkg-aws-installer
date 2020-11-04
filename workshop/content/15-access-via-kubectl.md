@@ -17,9 +17,9 @@ CURRENT   NAME                                                            CLUSTE
 *         tkg-mgmt-aws-20201104001924-admin@tkg-mgmt-aws-20201104001924   tkg-mgmt-aws-20201104001924   tkg-mgmt-aws-20201104001924-admin 
 ```
 
-This should match the details of the management cluster returned when you run ``tkg get management-cluster``.
+This should match the details of the management cluster returned when you ran ``tkg get management-cluster``.
 
-The context should be marked as the active context, so can run ``kubectl`` commands against it, such as to list the nodes in the cluster.
+The context should be marked as the active context, so you can run ``kubectl`` commands against it, such as to list the nodes in the cluster.
 
 ```execute-1
 kubectl get nodes
