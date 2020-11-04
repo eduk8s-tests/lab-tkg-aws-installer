@@ -4,6 +4,6 @@ This will bring up a view of the log messages as the installer runs the steps to
 
 ![](images/tkg-aws-installer-logs.png)
 
-The overall process can take up to 15-20 minutes. The exact time it takes will depend on whether the required container images are cached locally, as well as the speed of network connections where you are running the installer and the AWS region you are using.
+The overall process can take up to 15 minutes. The exact time it takes will depend on whether the required container images are cached locally, as well as the speed of network connections between where you are running the installer and the AWS region you are using.
 
-As the deployment progresses, we will explore what exactly is occuring.
+As the deployment progresses we will explore what is occuring.

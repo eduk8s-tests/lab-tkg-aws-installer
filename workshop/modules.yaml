@@ -23,5 +23,7 @@ modules:
         name: Review Configuration
     12-deploying-the-cluster:
         name: Deploying the Cluster
+    13-deployment-process:
+        name: Deployment Process
     99-additional-resources:
         name: Additional Resources
