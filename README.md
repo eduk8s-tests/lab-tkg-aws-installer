@@ -52,5 +52,6 @@ To remove these volumes run:
 ```
 docker volume rm lab-tkg-aws-installer_bin
 docker volume rm lab-tkg-aws-installer_kube
+docker volume rm lab-tkg-aws-installer_kube-tkg
 docker volume rm lab-tkg-aws-installer_tkg
 ```
