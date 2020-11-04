@@ -35,7 +35,7 @@ The Kubernetes version can be overridden using the ``--kubernetes-version`` opti
 tkg get kubernetesversions
 ```
 
-The instance types used for the control plane and worker nodes can be overridden using the ``--controlplane-size`` and ``--worker-size`` options.
+The instance types used for the control plane and worker nodes can be overridden using the ``--controlplane-size`` and ``--worker-size`` options. If you are intending to scale out the number of worker nodes, you would want to override the size of the control plane node. Guidelines for the size of the control plane node were referenced previously when working through the steps to deploy the management cluster.
 
 The number of control plane and worker nodes will be dictated by the plan. The number of each can be overridden using the ``--controlplane-machine-count`` and ``--worker-machine-count`` options.
 

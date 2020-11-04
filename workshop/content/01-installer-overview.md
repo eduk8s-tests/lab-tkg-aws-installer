@@ -1,6 +1,4 @@
-This is a guided installer for deploying a Tanzu Kubernetes Grid (TKG) management cluster to Amazon Web Services (AWS). It will step you through deploying a TKG management cluster suitable for testing or development.
-
-The installer can be used to deploy a TKG management cluster suitable for production systems, but the instructions will not cover any extra configuration requirements for the production use case.
+This is a guided installer for deploying a Tanzu Kubernetes Grid (TKG) management cluster to Amazon Web Services (AWS). It will step you through deploying a TKG management cluster suitable for testing or development, and then create a workload cluster to which you can deploy applications.
 
 As you progress through these instructions you will be shown commands which you need to run in the terminals provided by the installer environment. To execute the command you do not need to enter them into the terminal yourself, instead click on the command in the instructions and it will be run for you.
 
@@ -13,3 +11,5 @@ docker info
 ```
 
 Installation of the temporary management cluster to the local docker service will require 6GB of memory.
+
+Note that these instructions will result in Kubernetes clusters being deployed to your AWS account. If you do not go through all steps and perform the deletion of the clusters before destroying this installer environment, you will need to manually cleanup anything left in your AWS account.
