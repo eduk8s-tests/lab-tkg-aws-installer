@@ -19,7 +19,7 @@ CURRENT   NAME                                                            CLUSTE
 *         tkg-mgmt-aws-20201104001924-admin@tkg-mgmt-aws-20201104001924   tkg-mgmt-aws-20201104001924   tkg-mgmt-aws-20201104001924-admin 
 ```
 
-This should match the details of the management cluster returned when you ran ``tkg get management-cluster``.
+This should match the details of the management cluster returned when you ran ``tkg get management-clusters``.
 
 The context should be marked as the current context, so you can run ``kubectl`` commands against it. If it isn't marked as the current context, run:
 

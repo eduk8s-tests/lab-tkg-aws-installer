@@ -9,7 +9,7 @@ tkg get clusters
 For now there should not be any and this will return:
 
 ```
- NAME  NAMESPACE  STATUS  CONTROLPLANE  WORKERS  KUBERNETES  ROLES
+NAME  NAMESPACE  STATUS  CONTROLPLANE  WORKERS  KUBERNETES  ROLES
 ```
 
 To create a new workload cluster, you can use the ``tkg create cluster`` command.

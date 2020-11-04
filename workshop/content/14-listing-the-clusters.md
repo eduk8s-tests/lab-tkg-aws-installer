@@ -15,8 +15,8 @@ tkg get management-clusters
 You should see output similar to:
 
 ```
- MANAGEMENT-CLUSTER-NAME        CONTEXT-NAME                                                   STATUS  
- tkg-mgmt-aws-20201104001924 *  tkg-mgmt-aws-20201104001924-admin@tkg-mgmt-aws-20201104001924  Success 
+MANAGEMENT-CLUSTER-NAME        CONTEXT-NAME                                                   STATUS  
+tkg-mgmt-aws-20201104001924 *  tkg-mgmt-aws-20201104001924-admin@tkg-mgmt-aws-20201104001924  Success 
 ```
 
 The only management cluster you should see is the one you just created.
