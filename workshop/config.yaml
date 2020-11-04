@@ -3,10 +3,7 @@ spec:
     applications:
       terminal:
         enabled: true
-        layout: split/2
+        layout: split
     ingresses:
     - name: installer
       port: 8080
-    dashboards:
-    - name: Installer
-      url: $(ingress_protocol)://$(session_namespace)-installer.$(ingress_domain)$(ingress_port_suffix)/

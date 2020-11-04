@@ -85,7 +85,7 @@ tkg/kbld-linux-amd64-v0.24.0+vmware.1
 Move these into the ``bin`` directory and make them executable by running:
 
 ```execute-1
-mkdir $HOME/bin && \
+mkdir -p $HOME/bin && \
 mv tkg/tkg-* $HOME/bin/tkg && \
 mv tkg/kapp-* $HOME/bin/kapp && \
 mv tkg/ytt-* $HOME/bin/ytt && \

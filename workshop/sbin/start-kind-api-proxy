@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec nc -k -l 11111 -c 'nc host.docker.internal 11111'

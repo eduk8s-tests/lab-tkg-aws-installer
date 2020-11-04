@@ -26,7 +26,7 @@ docker-compose build
 To run the installer, then run:
 
 ```
-docker-compose up --renew-anon-volumes
+docker-compose up
 ```
 
 The installer can then be accessed at the URL:
@@ -34,3 +34,23 @@ The installer can then be accessed at the URL:
 * http://workshop.127.0.0.1.nip.io:10080
 
 To stop the installer, use ``ctrl-c`` or run ``docker-compose stop``.
+
+To clean up the stopped container when finished with the installer, run:
+
+```
+docker rm lab-tkg-aws-installer
+```
+
+The installer also creates three docker volumes. These are used for holding
+the downloaded installer binaries, as well as the ``tkg`` and ``kubectl``
+configuration. They exist such that if the container is stopped and you run
+it again, you still have the configuration and ``tkg`` binary which allows
+you to talk to the management cluster.
+
+To remove these volumes run:
+
+```
+docker volume rm lab-tkg-aws-installer_bin
+docker volume rm lab-tkg-aws-installer_kube
+docker volume rm lab-tkg-aws-installer_tkg
+```

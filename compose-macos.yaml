@@ -1,14 +1,23 @@
 version: "3.0"
 services:
   workshop:
+    container_name: lab-tkg-aws-installer
     build: .
     user: "root"
     environment:
     - INGRESS_PORT_SUFFIX=:10080
+    - ENABLE_KIND_API_PROXY=true
     ports:
     - "10080:10080"
-    network_mode: "host"
+    network_mode: "bridge"
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+    - bin:/home/eduk8s/bin
+    - kube:/home/eduk8s/.kube
+    - tkg:/home/eduk8s/.tkg
     extra_hosts:
     - workshop-installer:127.0.0.1
+volumes:
+  bin:
+  kube:
+  tkg:
