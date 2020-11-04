@@ -58,4 +58,4 @@ To confirm it has been deleted run:
 tkg get management-clusters
 ```
 
-Since we have been deploying clusters into AWS, you should also check the AWS EC2 dashboard to confirm the infrastructure comments created for the clusters have been deleted. You may see listings for the EC2 instances created, but these should be marked as ``Terminated`` and the entries removed automatically after a period of time.
+Since we have been deploying clusters into AWS, you should also check the AWS EC2 dashboard to confirm the infrastructure components created for the clusters have been deleted. You may see listings for the EC2 instances created, but these should be marked as ``Terminated`` and the entries removed automatically after a period of time.

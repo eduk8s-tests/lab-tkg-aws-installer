@@ -1,4 +1,4 @@
-If the workload cluster is to be used by a different operations team or set of developers, you next need to generate a ``kubeconfig`` file they can use to access the cluster. This is done using the ``tkg get credentials`` command. Run this on the ``dev-1`` workload cluster you just created.
+If the workload cluster is to be used by a different operations team or set of developers, you next need to generate a ``kubeconfig`` file they can use to access the cluster. This is done using the ``tkg get credentials`` command. Run this against the ``dev-1`` workload cluster you just created.
 
 ```execute-1
 tkg get credentials dev-1 --export-file kubeconfig-dev-1.yaml
