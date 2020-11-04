@@ -17,23 +17,30 @@ your local docker service. For this to work, if you are using Docker Desktop
 on macoOS or Windows, your local docker service must be configured with at
 least 6 GB of memory and that amount of memory should be available for use.
 
+Note that this installer currently only works on macOS and a configuration for
+``docker-compose`` is only thus supplied for macOS.
+
 To build the installer, first run:
 
 ```
-docker-compose build
+docker-compose build -f compose-macos.yaml
 ```
 
 To run the installer, then run:
 
 ```
-docker-compose up
+docker-compose up -f compose-macos.yaml
 ```
 
 The installer can then be accessed at the URL:
 
 * http://workshop.127.0.0.1.nip.io:10080
 
-To stop the installer, use ``ctrl-c`` or run ``docker-compose stop``.
+To stop the installer, use ``ctrl-c`` or run:
+
+```
+docker-compose stop -f compose-macos.yaml
+```
 
 To clean up the stopped container when finished with the installer, run:
 
@@ -41,11 +48,11 @@ To clean up the stopped container when finished with the installer, run:
 docker rm lab-tkg-aws-installer
 ```
 
-The installer also creates three docker volumes. These are used for holding
+The installer also creates four docker volumes. These are used for holding
 the downloaded installer binaries, as well as the ``tkg`` and ``kubectl``
 configuration. They exist such that if the container is stopped and you run
 it again, you still have the configuration and ``tkg`` binary which allows
-you to talk to the management cluster.
+you to still talk to the management cluster.
 
 To remove these volumes run:
 
@@ -55,3 +62,7 @@ docker volume rm lab-tkg-aws-installer_kube
 docker volume rm lab-tkg-aws-installer_kube-tkg
 docker volume rm lab-tkg-aws-installer_tkg
 ```
+
+You should only delete these after you have deleted any workload and
+management cluster, or copied the required configuration for ``tkg`` to
+talk to the clusters.
