@@ -19,7 +19,13 @@ CURRENT   NAME                                                            CLUSTE
 
 This should match the details of the management cluster returned when you ran ``tkg get management-cluster``.
 
-The context should be marked as the active context, so you can run ``kubectl`` commands against it, such as to list the nodes in the cluster.
+The context should be marked as the current context, so you can run ``kubectl`` commands against it. If it isn't marked as the current context, run:
+
+```
+kubectl config use-context `tkg get management-clusters -o json | jq -r ".[0].context"`
+```
+
+You should then be able to do an operation such as list the nodes in the cluster.
 
 ```execute-1
 kubectl get nodes
