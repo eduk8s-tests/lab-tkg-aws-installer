@@ -10,13 +10,13 @@ In our current case, the cluster management API provider for AWS EC2 is being us
 
 The sequence therefore is that the local management cluster is created using Kind with the cluster management API installed, and the provider for AWS EC2 available.
 
-Once the local management cluster is up and running, the Kubernetes API for the local management cluster is used to create the resources describing the details of a Kubernetes cluster hosted in AWS EC2. The cluster management API services will then create a Kubernetes cluster in AWS EC2 matching the requirements specified by the resource.
+Once the local management cluster is up and running, the Kubernetes API for the local management cluster is used to create the resources describing the details of a Kubernetes cluster hosted in AWS. The cluster management API services will then create a Kubernetes cluster in AWS matching the requirements specified by the resource.
 
-As the intent is for the Kubernetes cluster in AWS EC2 to be the management cluster, the cluster management API is also installed into that cluster. This turns the Kubernetes cluster in AWS EC2 into a full fledged management cluster.
+As the intent is for the Kubernetes cluster in AWS to be the management cluster, the cluster management API is also installed into that cluster. This turns the Kubernetes cluster in AWS into a full fledged management cluster.
 
-With the management cluster now running in AWS EC2, the local management cluster created using Kind is deleted. The local configuration for ``tkg`` is updated to point to the management cluster in AWS EC2, and the local configuration for ``kubectl`` also updated to refer to the same cluster.
+With the management cluster now running in AWS, the local management cluster created using Kind is deleted. The local configuration for ``tkg`` is updated to point to the management cluster in AWS, and the local configuration for ``kubectl`` also updated to refer to the same cluster.
 
-This whole process can take a little while, especially the first time it is run, as the container images required to run the Kind cluster and implement the cluster management API need to be pulled down to the local machine and run. This then needs to be repeated in AWS EC2, although instead of a Kind cluster being used in that case, it is Tanzu Kubernetes Grid (TKG) which is beind deployed.
+This whole process can take a little while, especially the first time it is run, as the container images required to run the Kind cluster and implement the cluster management API need to be pulled down to the local machine and run. This then needs to be repeated in AWS, although instead of a Kind cluster being used in that case, it is Tanzu Kubernetes Grid (TKG) which is beind deployed to AWS.
 
 When the process is complete, the ``tkg`` installer should output in the log view within the browser the following messages.
 
@@ -27,4 +27,4 @@ When the process is complete, the ``tkg`` installer should output in the log vie
 ℹ [1104 00:36:47.12391]: init.go:146] tkg create cluster [name] --kubernetes-version=[version] --plan=[plan]
 ```
 
-We are now ready to start interacting with the management cluster in AWS EC2.
+We are now ready to start interacting with the management cluster in AWS.
