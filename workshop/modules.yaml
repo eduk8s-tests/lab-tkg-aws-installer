@@ -25,5 +25,7 @@ modules:
         name: Deploying the Cluster
     13-deployment-process:
         name: Deployment Process
+    14-listing-clusters:
+        name: Listing the Clusters
     99-additional-resources:
         name: Additional Resources

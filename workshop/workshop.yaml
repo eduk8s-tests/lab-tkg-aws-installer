@@ -15,4 +15,5 @@ modules:
     - 11-review-configuration
     - 12-deploying-the-cluster
     - 13-deployment-process
+    - 14-listing-the-clusters
     - 99-additional-resources
