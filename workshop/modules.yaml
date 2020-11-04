@@ -39,7 +39,7 @@ modules:
         name: Upgrading a Cluster
     20-delete-workload-cluster:
         name: Delete Workload Cluster
-    21-delete-managent-cluster:
+    21-delete-management-cluster:
         name: Delete Management Cluster
     99-additional-resources:
         name: Additional Resources
