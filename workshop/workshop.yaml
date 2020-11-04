@@ -17,4 +17,10 @@ modules:
     - 13-deployment-process
     - 14-listing-the-clusters
     - 15-access-via-kubectl
+    - 16-new-workload-clusters
+    - 17-generating-kubeconfig
+    - 18-scaling-worker-nodes
+    - 19-upgrading-a-cluster
+    - 20-delete-workload-cluster
+    - 21-delete-management-cluster
     - 99-additional-resources

@@ -29,5 +29,17 @@ modules:
         name: Listing the Clusters
     15-access-via-kubectl:
         name: Access via "kubectl"
+    16-new-workload-clusters:
+        name: New Workload Clusters
+    17-generating-kubeconfig:
+        name: Generating "kubeconfig"
+    18-scaling-worker-nodes:
+        name: Scaling Worker Nodes
+    19-upgrading-a-cluster:
+        name: Upgrading a Cluster
+    20-delete-workload-cluster:
+        name: Delete Workload Cluster
+    21-delete-managent-cluster:
+        name: Delete Management Cluster
     99-additional-resources:
         name: Additional Resources
