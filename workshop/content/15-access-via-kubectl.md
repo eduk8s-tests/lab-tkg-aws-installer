@@ -21,7 +21,7 @@ This should match the details of the management cluster returned when you ran ``
 
 The context should be marked as the current context, so you can run ``kubectl`` commands against it. If it isn't marked as the current context, run:
 
-```
+```execute-1
 kubectl config use-context `tkg get management-clusters -o json | jq -r ".[0].context"`
 ```
 
