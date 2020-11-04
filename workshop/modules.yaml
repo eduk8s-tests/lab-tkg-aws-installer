@@ -27,5 +27,7 @@ modules:
         name: Deployment Process
     14-listing-the-clusters:
         name: Listing the Clusters
+    15-access-via-kubectl:
+        name: Access via "kubectl"
     99-additional-resources:
         name: Additional Resources

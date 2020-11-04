@@ -16,4 +16,5 @@ modules:
     - 12-deploying-the-cluster
     - 13-deployment-process
     - 14-listing-the-clusters
+    - 15-access-via-kubectl
     - 99-additional-resources

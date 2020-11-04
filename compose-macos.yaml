@@ -14,10 +14,12 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - bin:/home/eduk8s/bin
     - kube:/home/eduk8s/.kube
+    - kube-tkg:/home/eduk8s/.kube-tkg
     - tkg:/home/eduk8s/.tkg
     extra_hosts:
     - workshop-installer:127.0.0.1
 volumes:
   bin:
   kube:
+  kube-tkg:
   tkg:

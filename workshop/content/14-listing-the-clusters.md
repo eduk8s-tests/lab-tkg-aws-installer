@@ -25,4 +25,19 @@ If you didn't provide a name for the management cluster, a generated name will h
 
 The '*' along side the name of the cluster indicates it is the current management cluster which subsequent actions performed using ``tkg`` will operate against.
 
-If you were to run ``tkg init`` again, you could create additional management clusters and more than one would be listed. In the case of multiple management clusters you would need to ensure you have correctly select the management cluster you want to work with. This can be done using the ``tkg set management-cluster`` command.
+If you were to run ``tkg init`` again, you could create additional management clusters and more than one would be listed. In the case of multiple management clusters you would need to ensure you have correctly selected the management cluster you want to work with. This can be done using the ``tkg set management-cluster`` command.
+
+The details of the clusters you can interact with using the ``tkg`` command line tool are stored in the file ``$HOME/.tkg/config.yaml``.
+
+```execute-1
+cat $HOME/.tkg/config.yaml
+```
+
+This in turn references the file ``$HOME/.kube-tkg/config``, which contains the client certificates which permit access to the management cluster.
+
+```execute-1
+cat $HOME/.kube-tkg/config
+```
+
+If you need to setup a different client machine so that it can work with the management clusters you have created, you will need to make copies of both of these files and transfer them to the new machine.
+
