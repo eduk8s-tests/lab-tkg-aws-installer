@@ -2,7 +2,9 @@ The management cluster is a complete Kubernetes cluster with the cluster managem
 
 Although the main purpose of the cluster is to act as a management point for creating additional workload clusters, it is still a Kubernetes cluster and you can if you wish deploy additional applications directly to it, especially common services required by any workload clusters you create. This avoids the waste from leaving the cluster otherwise sitting idle.
 
-When the management cluster is deployed, the details are automatically added to the configuration for ``kubectl`` stored as ``$HOME/.kube/config``.
+You should though be careful in deploying to the management cluster applications which are public facing on the internet. This is because your AWS credentials are cached in a secret stored within the management cluster. If your application were compromised and an intruder gained access from the application pod to the Kubernetes REST API with cluster admin role, they could get access to your AWS credentials.
+
+When the management cluster is deployed, the credentials for accessing the REST API for the cluster are automatically added to the configuration for ``kubectl`` stored in the ``$HOME/.kube/config`` file.
 
 To list all the contexts which can be selected using ``kubectl`` run:
 
