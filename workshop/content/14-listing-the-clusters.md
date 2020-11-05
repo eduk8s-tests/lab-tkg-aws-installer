@@ -39,6 +39,4 @@ This in turn references the file ``$HOME/.kube-tkg/config``, which contains the 
 cat $HOME/.kube-tkg/config
 ```
 
-If you need to setup a different client machine so that it can work with the management clusters you have created, you will need to make copies of both of these files and transfer them to the new machine.
-
-Do not accidentally delete these files as you will need them in order to easily delete any clusters, including the management cluster. If you loose copies of these files, you will need to manually delete the various components which make up the deployed clusters using the AWS EC2 management console.
+Do not accidentally delete any files in these directories as you will need them in order to easily delete any clusters, including the management cluster. If you loose copies of these files, you will need to manually delete the various components which make up the deployed clusters using the AWS EC2 management console.
