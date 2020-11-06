@@ -6,6 +6,7 @@ services:
     user: "root"
     environment:
     - INGRESS_PORT_SUFFIX=:10080
+    - ENABLE_KIND_API_PROXY=false
     ports:
     - "10080:10080"
     network_mode: "host"
