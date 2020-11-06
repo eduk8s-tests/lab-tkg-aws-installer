@@ -6,7 +6,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     NETWORK_MODE=bridge
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if uname -a | grep -iq microsoft; then
-        NETWORK_MODE=bridge
+        if docker info | grep -q "Operating System: Docker Desktop"; then
+            NETWORK_MODE=bridge
+        fi
     fi
 fi
 
