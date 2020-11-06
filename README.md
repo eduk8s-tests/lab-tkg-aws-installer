@@ -22,15 +22,19 @@ to choose from depending on the platform you are using. These are:
 
 * ``docker-compose-bridge.yaml`` - Sets docker network mode to ``bridge``.
     Must be used if running the installer on macOS or Windows (WSL 2) with
-    Docker Desktop.
+    Docker Desktop. The port 10080 needs to be available on the host.
 * ``docker-compose-host.yaml`` - Sets docker network mode to ``host``.
-    Must be used if running the installer on Linux.
+    Must be used if running the installer on Linux. The ports 10080, 10082,
+    11111 and 8080 must be available on the host.
 
-Use the appropriate configuration file for your platform, however, if you
-are running docker on Windows (WSL 2), you must work out the IP address used
-by docker under WSL 2. You then must edit the ``docker-compose-bridge.yaml``
-configuration file and change the ``INGRESS_DOMAIN`` environment variable and
-replace ``127.0.0.1`` with the IP address used by docker under WSL 2.
+Use the configuration file that applies to for your platform in the commands
+below.
+
+If you are running docker on Windows (WSL 2), you must though also work out
+the IP address used by docker under WSL 2. You then must edit the
+``docker-compose-bridge.yaml`` configuration file and change the
+``INGRESS_DOMAIN`` environment variable and replace ``127.0.0.1`` with the IP
+address used by docker under WSL 2.
 
 Next you need to build the installer by running:
 
@@ -50,7 +54,7 @@ accessed at the URL:
 * http://workshop.127.0.0.1.nip.io:10080
 
 If you are on Windows, instead of using ``127.0.0.1`` use the IP address
-used by docker under WSL 2.:
+used by docker under WSL 2:
 
 * http://workshop.A.B.C.D.nip.io:10080
 
