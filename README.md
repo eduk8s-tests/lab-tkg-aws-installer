@@ -16,16 +16,18 @@ during an install will temporarily deploy a ``kind`` Kubernetes cluster to
 your local docker service. For this to work, if you are using Docker Desktop
 on macoOS or Windows, your local docker service must be configured with at
 least 6 GB of memory and that amount of memory should be available for use.
+If running on Linux, your host needs to have that amount of memory available.
 
 When running ``docker-compose`` there are two different configuration files
 to choose from depending on the platform you are using. These are:
 
 * ``docker-compose-bridge.yaml`` - Sets docker network mode to ``bridge``.
     Must be used if running the installer on macOS or Windows (WSL 2) with
-    Docker Desktop. The port 10080 needs to be available on the host.
+    Docker Desktop. The port 10080 needs to be available on the host
+    which docker runs.
 * ``docker-compose-host.yaml`` - Sets docker network mode to ``host``.
     Must be used if running the installer on Linux. The ports 10080, 10082,
-    11111 and 8080 must be available on the host.
+    11111 and 8080 must be available on the host docker runs.
 
 Use the configuration file that applies to for your platform in the commands
 below.
