@@ -17,8 +17,19 @@ your local docker service. For this to work, if you are using Docker Desktop
 on macoOS or Windows, your local docker service must be configured with at
 least 6 GB of memory and that amount of memory should be available for use.
 
-Note that this installer currently only works on macOS and a configuration for
-``docker-compose`` is only thus supplied for macOS.
+Note that this installer currently has only been tested using
+``docker-compose`` on macOS. A different configuration for ``docker-compose``
+is required for Linux systems.
+
+The ``docker-compose`` configuration file for macOS is:
+
+* ``compose-macos.yaml``
+
+The configuration file for Linux is:
+
+* ``compose-linux.yaml``
+
+Use the appropriate configuration file for your platform.
 
 To build the installer, first run:
 
