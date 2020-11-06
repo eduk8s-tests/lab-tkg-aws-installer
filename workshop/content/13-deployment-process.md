@@ -27,4 +27,4 @@ When the process is complete, the ``tkg`` installer should output in the log vie
 ℹ [1104 00:36:47.12391]: init.go:146] tkg create cluster [name] --kubernetes-version=[version] --plan=[plan]
 ```
 
-We are now ready to start interacting with the management cluster in AWS.
+Only continue once you see these messages.

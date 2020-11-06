@@ -19,7 +19,7 @@ To verify the number of worker nodes the cluster now has, run again:
 kubectl get nodes --kubeconfig=kubeconfig-dev-1.yaml
 ```
 
-The output should be similar to the following, confirming that there is now only one worker node.
+Once the worker node has been shutdown, the output should be similar to the following, confirming that there is now only one worker node.
 
 ```
 NAME                                            STATUS   ROLES    AGE   VERSION

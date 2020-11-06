@@ -80,3 +80,5 @@ This should yield:
 NAME   NAMESPACE  STATUS   CONTROLPLANE  WORKERS  KUBERNETES        ROLES  
 dev-1  default    running  1/1           2/2      v1.19.1+vmware.2  <none>
 ```
+
+Wait until the workload cluster has been created, and then continue.
