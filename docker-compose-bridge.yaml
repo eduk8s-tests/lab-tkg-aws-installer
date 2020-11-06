@@ -5,11 +5,12 @@ services:
     build: .
     user: "root"
     environment:
+    - INGRESS_DOMAIN=127.0.0.1.nip.io
     - INGRESS_PORT_SUFFIX=:10080
-    - ENABLE_KIND_API_PROXY=false
+    - ENABLE_KIND_API_PROXY=true
     ports:
     - "10080:10080"
-    network_mode: "host"
+    network_mode: "bridge"
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - bin:/home/eduk8s/bin

@@ -17,40 +17,47 @@ your local docker service. For this to work, if you are using Docker Desktop
 on macoOS or Windows, your local docker service must be configured with at
 least 6 GB of memory and that amount of memory should be available for use.
 
-Note that this installer currently has only been tested using
-``docker-compose`` on macOS. A different configuration for ``docker-compose``
-is required for Linux systems.
+When running ``docker-compose`` there are two different configuration files
+to choose from depending on the platform you are using. These are:
 
-The ``docker-compose`` configuration file for macOS is:
+* ``docker-compose-bridge.yaml`` - Sets docker network mode to ``bridge``.
+    Must be used if running the installer on macOS or Windows (WSL 2) with
+    Docker Desktop.
+* ``docker-compose-host.yaml`` - Sets docker network mode to ``host``.
+    Must be used if running the installer on Linux.
 
-* ``compose-macos.yaml``
+Use the appropriate configuration file for your platform, however, if you
+are running docker on Windows (WSL 2), you must work out the IP address used
+by docker under WSL 2. You then must edit the ``docker-compose-bridge.yaml``
+configuration file and change the ``INGRESS_DOMAIN`` environment variable and
+replace ``127.0.0.1`` with the IP address used by docker under WSL 2.
 
-The configuration file for Linux is:
-
-* ``compose-linux.yaml``
-
-Use the appropriate configuration file for your platform.
-
-To build the installer, first run:
+Next you need to build the installer by running:
 
 ```
-docker-compose build -f compose-macos.yaml
+docker-compose build -f docker-compose-bridge.yaml
 ```
 
 To run the installer, then run:
 
 ```
-docker-compose up -f compose-macos.yaml
+docker-compose up -f docker-compose-bridge.yaml
 ```
 
-The installer can then be accessed at the URL:
+If you are on macOS or Linux, the installer web interface can then be
+accessed at the URL:
 
 * http://workshop.127.0.0.1.nip.io:10080
+
+If you are on Windows, instead of using ``127.0.0.1`` use the IP address
+used by docker under WSL 2.:
+
+* http://workshop.A.B.C.D.nip.io:10080
 
 To stop the installer, use ``ctrl-c`` or run:
 
 ```
-docker-compose stop -f compose-macos.yaml
+docker-compose stop -f docker-compose-bridge.yaml
 ```
 
 To clean up the stopped container when finished with the installer, run:
