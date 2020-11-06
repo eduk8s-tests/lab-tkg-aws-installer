@@ -29,7 +29,7 @@ to choose from depending on the platform you are using. These are:
     Must be used if running the installer on Linux. The ports 10080, 10082,
     11111 and 8080 must be available on the host docker runs.
 
-Use the configuration file that applies to for your platform in the commands
+Use the configuration file that applies to your platform in the commands
 below.
 
 If you are running docker on Windows (WSL 2), you must though also work out
