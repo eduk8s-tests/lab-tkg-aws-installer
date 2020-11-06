@@ -14,7 +14,7 @@ steps you through the installation.
 The installer mounts the docker service socket from your local machine and
 during an install will temporarily deploy a ``kind`` Kubernetes cluster to
 your local docker service. For this to work, if you are using Docker Desktop
-on macoOS or Windows, your local docker service must be configured with at
+on macOS or Windows, your local docker service must be configured with at
 least 6 GB of memory and that amount of memory should be available for use.
 If running on Linux, your host needs to have that amount of memory available.
 
