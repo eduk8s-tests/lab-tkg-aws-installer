@@ -9,7 +9,7 @@ services:
     - INGRESS_PORT_SUFFIX=:10080
     - ENABLE_KIND_API_PROXY=true
     ports:
-    - "10080:10080"
+    - "127.0.0.1:10080:10080"
     network_mode: "bridge"
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
