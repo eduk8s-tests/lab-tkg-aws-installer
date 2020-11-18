@@ -1,45 +1,49 @@
 modules:
-    01-installer-overview:
+    00-installer-overview:
         name: Installer Overview
-    02-download-the-tkg-cli:
-        name: Download the "tkg" CLI
-    03-aws-ec2-requirements:
-        name: AWS EC2 Requirements
-    04-run-the-installer-ui:
+    install-command-line-tools/01-downloading-products:
+        name: Downloading Products
+    install-command-line-tools/02-download-tkg-package:
+        name: Download TKG Package
+    install-command-line-tools/03-install-carvel-tools:
+        name: Install Carvel Tools
+    create-management-cluster/01-installing-to-aws-ec2:
+        name: Installing to AWS EC2
+    create-management-cluster/02-run-the-installer-ui:
         name: Run the Installer UI
-    05-aws-ec2-credentials:
+    create-management-cluster/03-aws-ec2-credentials:
         name: AWS EC2 Credentials
-    06-vpc-settings-for-aws:
+    create-management-cluster/04-vpc-settings-for-aws:
         name: VPC Settings for AWS
-    07-management-cluster:
+    create-management-cluster/05-management-cluster:
         name: Management Cluster
-    08-metadata-for-cluster:
+    create-management-cluster/06-metadata-for-cluster:
         name: Metadata for Cluster
-    09-kubernetes-network:
+    create-management-cluster/07-kubernetes-network:
         name: Kubernetes Network
-    10-improvement-program:
+    create-management-cluster/08-improvement-program:
         name: Improvement Program
-    11-review-configuration:
+    create-management-cluster/09-review-configuration:
         name: Review Configuration
-    12-deploying-the-cluster:
+    create-management-cluster/10-deploying-the-cluster:
         name: Deploying the Cluster
-    13-deployment-process:
+    create-management-cluster/11-deployment-process:
         name: Deployment Process
-    14-listing-the-clusters:
+    create-management-cluster/12-listing-the-clusters:
         name: Listing the Clusters
-    15-access-via-kubectl:
+    create-management-cluster/13-access-via-kubectl:
         name: Access via "kubectl"
-    16-new-workload-clusters:
+    using-workload-clusters/01-new-workload-clusters:
         name: New Workload Clusters
-    17-generating-kubeconfig:
+    using-workload-clusters/02-generating-kubeconfig:
         name: Generating "kubeconfig"
-    18-scaling-worker-nodes:
+    using-workload-clusters/03-scaling-worker-nodes:
         name: Scaling Worker Nodes
-    19-upgrading-a-cluster:
-        name: Upgrading a Cluster
-    20-delete-workload-cluster:
+    using-workload-clusters/04-upgrading-the-cluster:
+        name: Upgrading the Cluster
+    deleting-the-clusters/01-delete-workload-cluster:
         name: Delete Workload Cluster
-    21-delete-management-cluster:
+    deleting-the-clusters/02-delete-management-cluster:
         name: Delete Management Cluster
     99-additional-resources:
         name: Additional Resources

@@ -1,6 +1,6 @@
 The next form to be filled in is where you need to provide details about the management cluster to be created. This includes the intended purpose of the Kubernetes cluster (development vs production), the cluster name, the EC2 instance types to be used for the control plane and worker nodes, and the AWS availability zone.
 
-![](images/management-cluster-form.png)
+![](management-cluster-form.png)
 
 If the Kubernetes management cluster is only going to be used for testing or management of disposable development workload clusters, you would likely choose **Development** for the cluster type. For this type of cluster, only a single control plane node will be created.
 

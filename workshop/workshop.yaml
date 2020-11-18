@@ -2,25 +2,27 @@ name: TKG on AWS
 
 modules:
     activate:
-    - 01-installer-overview
-    - 02-download-the-tkg-cli
-    - 03-aws-ec2-requirements
-    - 04-run-the-installer-ui
-    - 05-aws-ec2-credentials
-    - 06-vpc-settings-for-aws
-    - 07-management-cluster
-    - 08-metadata-for-cluster
-    - 09-kubernetes-network
-    - 10-improvement-program
-    - 11-review-configuration
-    - 12-deploying-the-cluster
-    - 13-deployment-process
-    - 14-listing-the-clusters
-    - 15-access-via-kubectl
-    - 16-new-workload-clusters
-    - 17-generating-kubeconfig
-    - 18-scaling-worker-nodes
-    - 19-upgrading-a-cluster
-    - 20-delete-workload-cluster
-    - 21-delete-management-cluster
+    - 00-installer-overview
+    - install-command-line-tools/01-downloading-products
+    - install-command-line-tools/02-download-tkg-package
+    - install-command-line-tools/03-install-carvel-tools
+    - create-management-cluster/01-installing-to-aws-ec2
+    - create-management-cluster/02-run-the-installer-ui
+    - create-management-cluster/03-aws-ec2-credentials
+    - create-management-cluster/04-vpc-settings-for-aws
+    - create-management-cluster/05-management-cluster
+    - create-management-cluster/06-metadata-for-cluster
+    - create-management-cluster/07-kubernetes-network
+    - create-management-cluster/08-improvement-program
+    - create-management-cluster/09-review-configuration
+    - create-management-cluster/10-deploying-the-cluster
+    - create-management-cluster/11-deployment-process
+    - create-management-cluster/12-listing-the-clusters
+    - create-management-cluster/13-access-via-kubectl
+    - using-workload-clusters/01-new-workload-clusters
+    - using-workload-clusters/02-generating-kubeconfig
+    - using-workload-clusters/03-scaling-worker-nodes
+    - using-workload-clusters/04-upgrading-the-cluster
+    - deleting-the-clusters/01-delete-workload-cluster
+    - deleting-the-clusters/02-delete-management-cluster
     - 99-additional-resources

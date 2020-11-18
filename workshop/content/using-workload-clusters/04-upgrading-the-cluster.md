@@ -6,4 +6,4 @@ We will not be showing how the upgrade process works here, but you can find more
 
 * https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.2/vmware-tanzu-kubernetes-grid-12/GUID-upgrade-tkg-index.html
 
-The general procedure is to first upgrade any management clusters. Once that has been done then you can start to upgrade the workload clusters. 
+The general procedure is to first upgrade the management cluster. Once that has been done then you can start to upgrade the workload clusters.

@@ -1,6 +1,6 @@
 To review the configuration details you have provided now click on **REVIEW CONFIGURATION**.
 
-![](images/review-configuration-form.png)
+![](review-configuration-form.png)
 
 If you have made any mistakes you can go back and edit the configuration by clicking on **EDIT CONFIGURATION**.
 

@@ -1,36 +1,6 @@
-The first step you need to perform is download the ``tkg`` command line tool.
+To deploy a TKG cluster and manage it, you need to download the ``tkg`` command line tool.
 
-The installer environment includes a tool called ``vmw-cli``. This tool can be used to download application packages from the my.vmware.com website.
-
-To obtain a listing of all VMware product categories from the my.vmware.com website using ``vmw-cli`` run:
-
-```execute-1
-vmw-cli ls
-```
-
-This should generate a listing starting with:
-
-```
-[GET] https://my.vmware.com/channel/public/api/v1.0/products/getProductsAtoZ
-<category>
-...
-```
-
-Before you can use ``vmw-cli`` to download any application packages, you will need to already have an account on the my.vmware.com website. If you don't have an account, create one.
-
-> Note: If you needed the ``tkg`` command line tool on your own machine you could login to the my.vmware.com website using a browser and download the client directly to your own computer. Uploading the client from your own computer into the installer environment is a bit harder, so we will use the ``vmw-cli`` script to download the client instead.
-
-So that they are available to ``vmw-cli``, enter your my.vmware.com credentials here in the installer environment. To enter your credentials run the following and enter them when prompted.
-
-```execute-1
-read -p "Enter your my.vmware.com username: " VMWUSER && export VMWUSER && \
-read -s -p "Enter your my.vmware.com password: " VMWPASS && export VMWPASS && \
-echo
-```
-
-Once entered, the credentials will be saved in the ``VMWUSER`` and ``VMWPASS`` environment variables.
-
-Next list the available product binaries from the my.vmware.com site for TKG.
+To do this, first list the available product binaries from the my.vmware.com site for TKG under the category ``vmware_tanzu_kubernetes_grid/1_x``:
 
 ```execute-1
 vmw-cli ls vmware_tanzu_kubernetes_grid/1_x/PRODUCT_BINARY
@@ -82,15 +52,11 @@ tkg/imgpkg-linux-amd64-v0.2.0+vmware.1
 tkg/kbld-linux-amd64-v0.24.0+vmware.1
 ```
 
-Move these into the ``bin`` directory and make them executable by running:
+Move the ``tkg`` program into the ``bin`` directory and make it executable by running:
 
 ```execute-1
 mkdir -p $HOME/bin && \
 mv tkg/tkg-* $HOME/bin/tkg && \
-mv tkg/kapp-* $HOME/bin/kapp && \
-mv tkg/ytt-* $HOME/bin/ytt && \
-mv tkg/imgpkg-* $HOME/bin/imgpkg && \
-mv tkg/kbld-* $HOME/bin/kbld && \
 chmod +x $HOME/bin/*
 ```
 

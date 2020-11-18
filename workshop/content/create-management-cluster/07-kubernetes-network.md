@@ -1,6 +1,6 @@
 We are almost done with configuration of the management cluster. In this next form you need to specify the CIDR block allocations for the service and pod networks within the Kubernetes cluster.
 
-![](images/kubernetes-network-form.png)
+![](kubernetes-network-form.png)
 
 What these allocations determine is the range of IP addresses which will be used for pods created in the Kubernetes cluster, and the separate range of IP addresses which will be used for services. These two CIDR blocks cannot overlap.
 

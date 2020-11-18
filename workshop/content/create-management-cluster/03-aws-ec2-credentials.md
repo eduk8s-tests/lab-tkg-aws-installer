@@ -2,7 +2,7 @@ Click on the **Deploy** button for the AWS EC2 option.
 
 This should initially bring up the form for entering your credentials for the IaaS Provider, in this case those for AWS.
 
-![](images/aws-ec2-credentials-form.png)
+![](aws-ec2-credentials-form.png)
 
 In this form enter your AWS credentials in the **ACCESS KEY ID** and **SECRET ACCESS_KEY** fields.
 

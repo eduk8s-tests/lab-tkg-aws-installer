@@ -27,7 +27,7 @@ url: {{ingress_protocol}}://{{session_namespace}}-installer.{{ingress_domain}}{{
 
 You should be presented with:
 
-![](images/tkg-installer-ui.png)
+![](tkg-installer-ui.png)
 
 The browser based web interface provides three choices as to where the management cluster can be installed. These are:
 
