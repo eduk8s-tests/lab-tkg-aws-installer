@@ -40,11 +40,11 @@ To clean up the stopped container when finished with the installer, run:
 docker rm lab-tkg-aws-installer
 ```
 
-The installer also creates four docker volumes. These are used for holding
-the downloaded installer binaries, as well as the ``tkg`` and ``kubectl``
-configuration. They exist such that if the container is stopped and you run
-it again, you still have the configuration and ``tkg`` binary which allows
-you to still talk to the management cluster.
+The installer also creates five docker volumes. These are used for holding
+the downloaded installer binaries and resources, as well as the ``tkg`` and
+``kubectl`` configuration. They exist such that if the container is stopped
+and you run it again, you still have the configuration and ``tkg`` binary
+which allows you to still talk to the management cluster.
 
 To remove these volumes run:
 
@@ -53,6 +53,7 @@ docker volume rm lab-tkg-aws-installer_bin
 docker volume rm lab-tkg-aws-installer_kube
 docker volume rm lab-tkg-aws-installer_kube-tkg
 docker volume rm lab-tkg-aws-installer_tkg
+docker volume rm lab-tkg-aws-installer_work
 ```
 
 You should only delete these after you have deleted any workload and
