@@ -19,6 +19,9 @@ RUN mkdir -p /opt/eduk8s/config && \
     mv workshop/config.yaml /opt/eduk8s/config/workshop.yaml && \
     mv workshop /opt/workshop && \
     npm install && \
+    mkdir /home/eduk8s/work && \
     fix-permissions $HOME
+
+ENV EXERCISES_DIR=work
 
 ENV PATH=/opt/workshop/bin:$PATH

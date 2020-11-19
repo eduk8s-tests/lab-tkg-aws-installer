@@ -41,8 +41,14 @@ modules:
         name: Scaling Worker Nodes
     using-workload-clusters/04-upgrading-the-cluster:
         name: Upgrading the Cluster
-    deleting-the-clusters/01-delete-workload-cluster:
-        name: Delete Workload Cluster
+    extensions-and-services/01-extensions-bundle:
+        name: Extensions Bundle
+    extensions-and-services/02-connectivity-api-bundle:
+        name: Connectivity API Bundle
+    extensions-and-services/03-order-of-installation:
+        name: Order of Installation
+    deleting-the-clusters/01-delete-workload-clusters:
+        name: Delete Workload Clusters
     deleting-the-clusters/02-delete-management-cluster:
         name: Delete Management Cluster
     99-additional-resources:

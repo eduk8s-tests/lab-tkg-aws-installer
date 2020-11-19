@@ -17,6 +17,7 @@ services:
     - kube:/home/eduk8s/.kube
     - kube-tkg:/home/eduk8s/.kube-tkg
     - tkg:/home/eduk8s/.tkg
+    - work:/home/eduk8s/work
     extra_hosts:
     - workshop-installer:127.0.0.1
 volumes:
@@ -24,3 +25,4 @@ volumes:
   kube:
   kube-tkg:
   tkg:
+  work:

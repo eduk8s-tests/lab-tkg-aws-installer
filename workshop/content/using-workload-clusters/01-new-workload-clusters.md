@@ -42,13 +42,15 @@ The number of control plane and worker nodes will be dictated by the plan. The n
 Before actually committing to creating a workload cluster, you can use the ``--dry-run`` option to see what resources would be created. To see the resources for a development cluster with 2 worker nodes and instance type of ``m4.xlarge``, run:
 
 ```execute-1
-tkg create cluster dev-1 --plan=dev --worker-size=m4.xlarge --worker-machine-count=2 --dry-run
+tkg create cluster tkg-services --plan=dev --worker-size=m4.xlarge --worker-machine-count=2 --dry-run
 ```
+
+The cluster is being named ``tkg-services`` in this case as we will later use it to install a shared Harbor registry for use by any subsequent workload clusters which are created.
 
 Now create the cluster by running:
 
 ```execute-1
-tkg create cluster dev-1 --plan=dev --worker-size=m4.xlarge --worker-machine-count=2
+tkg create cluster tkg-services --plan=dev --worker-size=m4.xlarge --worker-machine-count=2
 ```
 
 Because we now have the management cluster in AWS, it handles the creation of the new workload cluster, and there is no need to create a local management cluster to bootstrap it.
@@ -58,12 +60,12 @@ The output from the command should be similar to:
 ```
 Logs of the command execution can also be found at: /tmp/tkg-20201104T080926981867688.log
 Validating configuration...
-Creating workload cluster 'dev-1'...
+Creating workload cluster 'tkg-services'...
 Waiting for cluster to be initialized...
 Waiting for cluster nodes to be available...
 Waiting for addons installation...
 
-Workload cluster 'dev-1' created
+Workload cluster 'tkg-services' created
 ```
 
 How long this takes will depend on the size of the cluster. For a small cluster of this size it should take about 10 minutes.
@@ -77,8 +79,8 @@ tkg get clusters
 This should yield:
 
 ```
-NAME   NAMESPACE  STATUS   CONTROLPLANE  WORKERS  KUBERNETES        ROLES  
-dev-1  default    running  1/1           2/2      v1.19.1+vmware.2  <none>
+NAME          NAMESPACE  STATUS   CONTROLPLANE  WORKERS  KUBERNETES        ROLES  
+tkg-services  default    running  1/1           2/2      v1.19.1+vmware.2  <none>
 ```
 
 Wait until the workload cluster has been created, and then continue.

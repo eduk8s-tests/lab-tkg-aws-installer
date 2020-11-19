@@ -4,10 +4,10 @@ Do note however that it may be necessary to first ensure you have manually delet
 
 * https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/1.2/vmware-tanzu-kubernetes-grid-12/GUID-tanzu-k8s-clusters-delete-cluster.html
 
-To delete the ``dev-1`` workload cluster you created, run:
+To delete the ``tkg-services`` workload cluster you created, run:
 
 ```execute-1
-tkg delete cluster dev-1
+tkg delete cluster tkg-services
 ```
 
 When prompted, confirm deletion by entering ``y``.
@@ -19,7 +19,7 @@ text: y
 This should output:
 
 ```
-Workload cluster 'dev-1' is being deleted
+Workload cluster 'tkg-services' is being deleted
 ```
 
 and deletion of the workload cluster will be scheduled.
@@ -33,8 +33,8 @@ tkg get clusters
 and you should see the status as being deleted:
 
 ```
-NAME   NAMESPACE  STATUS    CONTROLPLANE  WORKERS  KUBERNETES        ROLES  
-dev-1  default    deleting  1/1                    v1.19.1+vmware.2  <none> 
+NAME        NAMESPACE  STATUS    CONTROLPLANE  WORKERS  KUBERNETES        ROLES  
+tkg-services  default    deleting  1/1                    v1.19.1+vmware.2  <none> 
 ```
 
 Keep running this command periodically to ensure that the workload cluster has been completely deleted before continuing.

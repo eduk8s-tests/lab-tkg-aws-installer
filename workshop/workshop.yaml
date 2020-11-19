@@ -23,6 +23,9 @@ modules:
     - using-workload-clusters/02-generating-kubeconfig
     - using-workload-clusters/03-scaling-worker-nodes
     - using-workload-clusters/04-upgrading-the-cluster
-    - deleting-the-clusters/01-delete-workload-cluster
+    - extensions-and-services/01-extensions-bundle
+    - extensions-and-services/02-connectivity-api-bundle
+    - extensions-and-services/03-order-of-installation
+    - deleting-the-clusters/01-delete-workload-clusters
     - deleting-the-clusters/02-delete-management-cluster
     - 99-additional-resources
