@@ -26,7 +26,7 @@ deployment.apps/extension-manager created
 
 Note that the first thing created is the namespace ``vmware-system-tmc``. This namespace must exist when the subsequent step of installing the Kapp controller is run. Thus, it is important that the TMC extension manager is always installed first, as later steps will fail without it.
 
-If you wish to monitor the rollout of the TMC extension manager and wait for it to complete before continuing, you can run:
+To monitor the rollout of the TMC extension manager and wait for it to complete before continuing, you can run:
 
 ```execute-1
 kubectl rollout status deployment.apps/extension-manager -n vmware-system-tmc
@@ -37,4 +37,3 @@ When the deployment is complete it should output:
 ```
 deployment "extension-manager" successfully rolled out
 ```
-

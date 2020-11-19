@@ -20,7 +20,7 @@ clusterrole.rbac.authorization.k8s.io/kapp-controller-cluster-role created
 clusterrolebinding.rbac.authorization.k8s.io/kapp-controller-cluster-role-binding created
 ```
 
-If you wish to monitor the rollout of the Kapp controller and wait for it to complete before continuing, you can run:
+To monitor the rollout of the Kapp controller and wait for it to complete before continuing, you can run:
 
 ```execute-1
 kubectl rollout status deployment.apps/kapp-controller -n vmware-system-tmc
