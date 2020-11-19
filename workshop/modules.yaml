@@ -47,6 +47,24 @@ modules:
         name: Connectivity API Bundle
     extensions-and-services/03-order-of-installation:
         name: Order of Installation
+    installing-harbor-registry/01-setting-cluster-context:
+        name: Setting Cluster Context
+    installing-harbor-registry/02-tmc-extension-manager:
+        name: TMC Extension Manager
+    installing-harbor-registry/03-carvel-kapp-controller:
+        name: Carvel Kapp Controller
+    installing-harbor-registry/04-kubernetes-cert-manager:
+        name: Kubernetes Cert Manager
+    installing-harbor-registry/05-deploying-contour:
+        name: Deploying Contour
+    installing-harbor-registry/06-deploying-harbor:
+        name: Deploying Harbor
+    installing-harbor-registry/07-label-services-cluster:
+        name: Label Services Cluster
+    installing-harbor-registry/08-add-connectivity-api:
+        name: Add Connectivity API
+    installing-harbor-registry/09-annotate-harbor-route:
+        name: Annotate Harbor Route
     deleting-the-clusters/01-delete-workload-clusters:
         name: Delete Workload Clusters
     deleting-the-clusters/02-delete-management-cluster:

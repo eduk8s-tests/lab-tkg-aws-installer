@@ -8,7 +8,7 @@ vmw-cli ls vmware_tanzu_kubernetes_grid/1_x/PRODUCT_BINARY
 
 This ensures we are working against the correct context before downloading any packages.
 
-To download the bundle for the connectivity API bundle run:
+To download the package for the connectivity API bundle run:
 
 ```execute-1
 vmw-cli cp tkg-connectivity-manifests-v1.2.0-vmware.2.tar

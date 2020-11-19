@@ -45,9 +45,9 @@ Before actually committing to creating a workload cluster, you can use the ``--d
 tkg create cluster tkg-services --plan=dev --worker-size=m4.xlarge --worker-machine-count=2 --dry-run
 ```
 
-The cluster is being named ``tkg-services`` in this case as we will later use it to install a shared Harbor registry for use by any subsequent workload clusters which are created.
+The cluster is being named ``tkg-services`` in this case as we will later use it to install a shared Harbor registry for use by any subsequent workload clusters which are created. If setting up a production environment, it would be recommended to use the ``prod`` plan rather than the ``dev`` plan being used here.
 
-Now create the cluster by running:
+When you are ready, create the cluster by running:
 
 ```execute-1
 tkg create cluster tkg-services --plan=dev --worker-size=m4.xlarge --worker-machine-count=2

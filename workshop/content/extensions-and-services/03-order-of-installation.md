@@ -11,7 +11,7 @@ The order of the next set of installation steps, once you have the management cl
 * Install in the shared services cluster the Contour ingress controller.
 * Install in the shared services cluster the Harbor registry.
 
-With the Harbor registry deployed the management cluster needs to next be setup with details of the Habor registry and services which ensure that details of the Harbor registry are injected into any workload clusters which are subsequently created.
+With the Harbor registry deployed, the management cluster then needs to be setup with details of the Harbor registry, and a service, which ensure that details of the Harbor registry are injected into any workload clusters which are subsequently created. These steps are:
 
 * Identify with the management cluster the name of the cluster used for shared services.
 * Install in the management cluster the connectivity API operator, configuring it with details of the Harbor registry deploy to the shared services cluster.

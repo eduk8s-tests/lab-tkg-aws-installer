@@ -27,4 +27,6 @@ ip-10-0-1-136.ap-southeast-2.compute.internal   Ready    <none>   22m   v1.19.1+
 ip-10-0-1-18.ap-southeast-2.compute.internal    Ready    master   24m   v1.19.1+vmware.2
 ```
 
+Keep running the ``kubectl get nodes`` command until you see that the node has been completely shutdown.
+
 If there had been applications deployed to the worker node which was shutdown, they would be evacuated from the node first, and provided there was sufficient remaining resources, restarted on the remaining worker node.

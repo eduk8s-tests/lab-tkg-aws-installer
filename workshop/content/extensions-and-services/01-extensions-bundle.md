@@ -15,9 +15,9 @@ To download the extensions bundle, first list the available product binaries fro
 vmw-cli ls vmware_tanzu_kubernetes_grid/1_x/PRODUCT_BINARY
 ```
 
-This command ensures we are working against the correct context before downloading any packages.
+This ensures we are working against the correct context before downloading any packages.
 
-To download the bundle for the extensions bundle run:
+To download the package for the extensions bundle run:
 
 ```execute-1
 vmw-cli cp tkg-extensions-manifests-v1.2.0-vmware.1.tar-2.gz

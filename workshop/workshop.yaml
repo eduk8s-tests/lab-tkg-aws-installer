@@ -26,6 +26,15 @@ modules:
     - extensions-and-services/01-extensions-bundle
     - extensions-and-services/02-connectivity-api-bundle
     - extensions-and-services/03-order-of-installation
+    - installing-harbor-registry/01-setting-cluster-context
+    - installing-harbor-registry/02-tmc-extension-manager
+    - installing-harbor-registry/03-carvel-kapp-controller
+    - installing-harbor-registry/04-kubernetes-cert-manager
+    - installing-harbor-registry/05-deploying-contour
+    - installing-harbor-registry/06-deploying-harbor
+    - installing-harbor-registry/07-label-services-cluster
+    - installing-harbor-registry/08-add-connectivity-api
+    - installing-harbor-registry/09-annotate-harbor-route
     - deleting-the-clusters/01-delete-workload-clusters
     - deleting-the-clusters/02-delete-management-cluster
     - 99-additional-resources
