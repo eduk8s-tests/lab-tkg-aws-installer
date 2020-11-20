@@ -1,4 +1,4 @@
-Before installing any of the extensions into a cluster it is necessary to install the TMC extension manager, Carvel Kapp controller and Kubernetes cert-manager.
+Before installing any of the extensions into a cluster it is necessary to install the TMC extension manager, Carvel Kapp controller and Kubernetes ``cert-manager``.
 
 Since we are going to perform a number of steps against the ``tkg-services`` cluster where the Harbor registry is to be installed, we will first ensure it is set as the current context for any actions performed using ``kubectl`` or the Carvel tools.
 
