@@ -27,4 +27,16 @@ When the process is complete, the ``tkg`` installer should output in the log vie
 ℹ [1104 00:36:47.12391]: init.go:146] tkg create cluster [name] --kubernetes-version=[version] --plan=[plan]
 ```
 
-Only continue once you see these messages.
+Once you see these messages indicating the process has completed, you can close the installer dashboard by clicking below.
+
+```dashboard:delete-dashboard
+name: Installer
+```
+
+and also the dashboard used to launch the installer.
+
+```dashboard:delete-dashboard
+name: Launcher
+```
+
+

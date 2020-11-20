@@ -57,13 +57,15 @@ modules:
         name: Kubernetes Cert Manager
     installing-harbor-registry/05-deploying-contour:
         name: Deploying Contour
-    installing-harbor-registry/06-deploying-harbor:
+    installing-harbor-registry/06-accessing-envoy-ui:
+        name: Accessing Envoy UI
+    installing-harbor-registry/07-deploying-harbor:
         name: Deploying Harbor
-    installing-harbor-registry/07-label-services-cluster:
+    installing-harbor-registry/08-label-services-cluster:
         name: Label Services Cluster
-    installing-harbor-registry/08-add-connectivity-api:
+    installing-harbor-registry/09-add-connectivity-api:
         name: Add Connectivity API
-    installing-harbor-registry/09-annotate-harbor-route:
+    installing-harbor-registry/10-annotate-harbor-route:
         name: Annotate Harbor Route
     deleting-the-clusters/01-delete-workload-clusters:
         name: Delete Workload Clusters

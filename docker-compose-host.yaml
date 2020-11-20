@@ -20,6 +20,7 @@ services:
     - work:/home/eduk8s/work
     extra_hosts:
     - workshop-installer:127.0.0.1
+    - workshop-envoy:127.0.0.1
 volumes:
   bin:
   kube:

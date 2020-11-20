@@ -7,3 +7,5 @@ spec:
     ingresses:
     - name: installer
       port: 8080
+    - name: envoy
+      port: 9001
