@@ -1,4 +1,4 @@
-FROM quay.io/eduk8s/base-environment:201030.024214.29845df
+FROM quay.io/eduk8s/base-environment:201120.072217.2998873
 
 USER root
 
