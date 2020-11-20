@@ -9,7 +9,7 @@ tkg get management-clusters > /dev/null 2>&1
 
 # Calculate the list of BOM files that need to be modified.
 
-BOM_FILES=`grep -rl kubeadmConfigPatches .tkg/bom/bom-*.yaml`
+BOM_FILES=`grep -rl kubeadmConfigPatches $HOME/.tkg/bom/bom-*.yaml`
 
 # Patch each of the BOM files and add a well known port for Kind to use for
 # the Kubernetes REST API endpoint.
