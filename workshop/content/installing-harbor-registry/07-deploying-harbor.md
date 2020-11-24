@@ -135,6 +135,28 @@ You can then interrupt the monitor:
 session: 1
 ```
 
+The state of individual pods which make up the deployment of Harbor can be seen by running:
+
+```execute-1
+kubectl get pods -n tanzu-system-registry
+```
+
+The output should be similar to:
+
+```
+NAME                                    READY   STATUS    RESTARTS   AGE
+harbor-clair-ff5b4dc8c-5wwbp            2/2     Running   0          5m
+harbor-core-74894b9fd9-bsf2v            1/1     Running   0          5m
+harbor-database-0                       1/1     Running   0          5m
+harbor-jobservice-6f7bdbb8cb-5dwxp      1/1     Running   0          5m
+harbor-notary-server-5745b94867-rw7zd   1/1     Running   0          5m
+harbor-notary-signer-57c8fd7dcf-ps4nd   1/1     Running   0          5m
+harbor-portal-d98ccbc79-b9r7h           1/1     Running   0          5m
+harbor-redis-0                          1/1     Running   0          5m
+harbor-registry-6ddc884ccd-wzmf7        2/2     Running   0          5m
+harbor-trivy-0                          1/1     Running   0          5m
+```
+
 To verify that Harbor is deployed, use a separate browser window to visit the URL output by running:
 
 ```execute-1

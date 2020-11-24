@@ -124,9 +124,9 @@ The output should be similar to:
 
 ```
 NAME                       READY   STATUS    RESTARTS   AGE
-contour-59cdc65ff7-48jmr   1/1     Running   0          180s
-contour-59cdc65ff7-rfpvp   1/1     Running   0          180s
-envoy-7pdbv                2/2     Running   0          180s
+contour-59cdc65ff7-48jmr   1/1     Running   0          3m
+contour-59cdc65ff7-rfpvp   1/1     Running   0          3m
+envoy-7pdbv                2/2     Running   0          3m
 ```
 
 When the Contour extension is deployed to AWS EC2, it will be automatically assigned an external load balancer and made public. You can view the hostname assigned to the load balancer by running:
