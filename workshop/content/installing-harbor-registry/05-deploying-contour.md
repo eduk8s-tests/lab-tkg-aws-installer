@@ -82,7 +82,7 @@ This should output:
 extension.clusters.tmc.cloud.vmware.com/contour created
 ```
 
-To view the state of the deployment using the TMC extension manager, you can run:
+To view the state of the deployment using the TMC extension manager you can run:
 
 ```execute-1
 kubectl get extension contour -n tanzu-system-ingress
@@ -101,7 +101,7 @@ To monitor the state of the Contour application as it is in turn deployed by the
 kubectl get app contour -n tanzu-system-ingress -w
 ```
 
-This will provide continuous updates as deployment proceeds. Wait until it shows a status of "Reconcile succeeded".
+This will provide continuous updates as deployment proceeds. Wait until it shows a stable status of "Reconcile succeeded".
 
 ```
 NAME      DESCRIPTION           SINCE-DEPLOY   AGE
