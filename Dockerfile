@@ -11,6 +11,9 @@ RUN HOME=/root && \
     ./aws/install && \
     rm -rf aws awscliv2.zip
 
+RUN curl -sL -o /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/3.4.1/yq_linux_amd64 && \
+    chmod +x /usr/local/bin/yq
+
 USER 1001
 
 COPY --chown=1001:0 . /home/eduk8s/
