@@ -95,17 +95,23 @@ NAME      STATE   HEALTH   VERSION
 contour   3 
 ```
 
-You can also view the state of the Contour application as was in turn deployed by the Kapp controller by running:
+To monitor the state of the Contour application as it is in turn deployed by the Kapp controller run:
 
 ```execute-1
-kubectl get app contour -n tanzu-system-ingress
+kubectl get app contour -n tanzu-system-ingress -w
 ```
 
-This should output:
+This will provide continuous updates as deployment proceeds. Wait until it shows a status of "Reconcile succeeded".
 
 ```
 NAME      DESCRIPTION           SINCE-DEPLOY   AGE
 contour   Reconcile succeeded   60s            120s
+```
+
+You can then interrupt the monitor:
+
+```terminal:interrupt
+session: 1
 ```
 
 The state of individual pods which make up the deployment of Contour can be seen by running:

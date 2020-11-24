@@ -25,7 +25,122 @@ clusterrolebinding.rbac.authorization.k8s.io/harbor-extension-cluster-rolebindin
 
 The next step is to declare the configuration for Harbor and a sample configuration file is provided for this which can be found at ``tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml.example``.
 
-...
+Make a copy of the example file:
 
+```execute-1
+cp tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml.example tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml
+```
 
-The instructions for installing Harbor are not yet complete. [Jump ahead](../deleting-the-clusters/01-delete-workload-clusters) to section on deleting clusters.
+The key configuration settings in this file are the hostname to be used to access the Harbor instance, and an initial administrator password.
+
+There are also settings for defining other passwords and secrets used internally between components of Harbor but these can be generated as you would normally need to know them. To set random passwords and secrets in the settings file, run:
+
+```execute-1
+tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/generate-passwords.sh tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml
+```
+
+For the administrator password, change the generated value to a known password which you can remember. To set the administrator password to "Harbor1234" run:
+
+```execute-1
+sed -i "s/^harborAdminPassword:.*/harborAdminPassword: Harbor12345/" tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml
+```
+
+Next you will need to want to override the hostname for the Harbor instance.
+
+If you own a domain name and control your DNS server, you can setup a hostname in DNS. This should be setup to use a DNS CNAME record which refers to the hostname of the inbound ingress router for the Contour instance you deployed earlier. You can get the hostname of the inbound ingress router by running:
+
+```execute-1
+CONTOUR_ROUTER_HOSTNAME=`kubectl get svc envoy -n tanzu-system-ingress -o jsonpath='{.status.loadBalancer.ingress[0].hostname}{"\n"}'`; echo $CONTOUR_ROUTER_HOSTNAME
+```
+
+If you had an SSL cerificate covering the hostname, you would need to add the details of it into the settings file.
+
+For this guided installer, rather than rely on you having your own domain name, we will use a method which allows use to use a ``nip.io`` address for the Harbor instance.
+
+To do this we first need to determine the IP address corresponding to the inbound ingress router for the Contour instance. To determine this run:
+
+```execute-1
+CONTOUR_ROUTER_ADDRESS=`python3 -c "import socket; print(socket.gethostbyname('$CONTOUR_ROUTER_HOSTNAME'))"`; echo $CONTOUR_ROUTER_ADDRESS
+```
+
+Next we will construct ``nip.io`` hostname for Harbor using this IP address.
+
+```execute-1
+HARBOR_HOSTNAME=harbor.$CONTOUR_ROUTER_ADDRESS.nip.io; echo $HARBOR_HOSTNAME
+```
+
+To update the settings file with this hostname, run:
+
+```execute-1
+sed -i "s/^hostname:.*/hostname: $HARBOR_HOSTNAME/" tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml
+```
+
+For a production instance of Harbor you would want to double check whether any other settings need to be changed as well.
+
+Once done with any changes, create a secret from the settings file by running:
+
+```execute-1
+kubectl create secret generic harbor-data-values --from-file=values.yaml=tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml -n tanzu-system-registry
+```
+
+This should output:
+
+```
+secret/harbor-data-values created
+```
+
+This secret is created in the namespace ``tanzu-system-registry`` created above for deployment of Harbor. The configuration needs to be loaded as a secret into Kubernetes so that the TMC extension manager can find it when Harbor is being deployed.
+
+To perform the deployment of Harbor run:
+
+```execute-1
+kubectl apply -f tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-extension.yaml
+```
+
+This should output:
+
+```
+extension.clusters.tmc.cloud.vmware.com/harbor created
+```
+
+To view the state of the deployment using the TMC extension manager, you can run:
+
+```execute-1
+kubectl get extension harbor -n tanzu-system-registry
+```
+
+This should output:
+
+```
+NAME     STATE   HEALTH   VERSION
+harbor   3 
+```
+
+To monitor the state of the Harbor application as it is in turn deployed by the Kapp controller run:
+
+```execute-1
+kubectl get app harbor -n tanzu-system-registry -w
+```
+
+This will provide continuous updates as deployment proceeds. Wait until it shows a status of "Reconcile succeeded".
+
+```
+NAME     DESCRIPTION           SINCE-DEPLOY   AGE
+harbor   Reconcile succeeded   2m             3m
+```
+
+You can then interrupt the monitor:
+
+```terminal:interrupt
+session: 1
+```
+
+To verify that Harbor is deployed, use a separate browser window to visit the URL output by running:
+
+```execute-1
+echo https://$HARBOR_HOSTNAME/
+```
+
+With the present configuration self signed certificates are being used, so you will need to tell the browser to skip verification and allow you access.
+
+To login to the Harbor instance, use the username "admin" and password "Harbor1234".
