@@ -12,4 +12,4 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     fi
 fi
 
-docker-compose -f docker-compose-$NETWORK_MODE.yaml up
+docker-compose -f docker-compose-$NETWORK_MODE.yaml up "$@"
