@@ -23,7 +23,7 @@ In this case, since the workload cluster was created with 2 worker nodes, you sh
 
 ```
 NAME                                            STATUS   ROLES    AGE   VERSION
-ip-10-0-1-136.ap-southeast-2.compute.internal   Ready    <none>   14m   v1.19.1+vmware.2
-ip-10-0-1-16.ap-southeast-2.compute.internal    Ready    <none>   14m   v1.19.1+vmware.2
-ip-10-0-1-18.ap-southeast-2.compute.internal    Ready    master   16m   v1.19.1+vmware.2
+ip-10-0-1-136.ap-southeast-2.compute.internal   Ready    <none>   5m    v1.19.1+vmware.2
+ip-10-0-1-16.ap-southeast-2.compute.internal    Ready    <none>   5m    v1.19.1+vmware.2
+ip-10-0-1-18.ap-southeast-2.compute.internal    Ready    master   10m   v1.19.1+vmware.2
 ```

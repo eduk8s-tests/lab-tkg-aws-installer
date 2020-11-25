@@ -1,4 +1,6 @@
-This is a guided installer for deploying Tanzu Kubernetes Grid (TKG) to Amazon Web Services (AWS). It will step you through deploying a TKG management cluster, workload clusters and extension services.
+This is a guided installer for deploying Tanzu Kubernetes Grid (TKG) to Amazon Web Services (AWS). It will step you through deploying a TKG management cluster, a shared services cluster hosting the Harbor registry, and a workload cluster for developing and/or deploying your applications.
+
+The guide is for first time users to introduce you to the steps required to set up Tanzu Kubernetes Grid on AWS. The installer follows one specific path to get everything working. For an actual development/production cluster you will likely want to make customizations as to how everything is setup, so you should also refer to the Tanzu Kubernetes Grid documentation.
 
 As you progress through these instructions you will be shown commands which you need to run in the terminals provided by the installer environment. To execute the command you do not need to enter them into the terminal yourself, instead click on the command in the instructions and it will be run for you.
 

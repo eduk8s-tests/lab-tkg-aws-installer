@@ -15,8 +15,8 @@ kubectl config get-contexts
 This should output a result similar to:
 
 ```
-CURRENT   NAME                                                            CLUSTER                       AUTHINFO                            NAMESPACE
-*         tkg-mgmt-aws-20201104001924-admin@tkg-mgmt-aws-20201104001924   tkg-mgmt-aws-20201104001924   tkg-mgmt-aws-20201104001924-admin 
+CURRENT   NAME                              CLUSTER        AUTHINFO             NAMESPACE
+*         mgmt-cluster-admin@mgmt-cluster   mgmt-cluster   mgmt-cluster-admin   
 ```
 
 This should match the details of the management cluster returned when you ran ``tkg get management-clusters``.
@@ -24,12 +24,10 @@ This should match the details of the management cluster returned when you ran ``
 The context should be marked as the current context, so you can run ``kubectl`` commands against it. If it isn't marked as the current context, run:
 
 ```execute-1
-kubectl config use-context `tkg get management-clusters -o json | jq -r ".[0].context"`
+kubectl config use-context mgmt-cluster-admin@mgmt-cluster
 ```
 
-Note that the name of the management cluster was calculated in this case, but you could list it's name explicitly.
-
-With the current context now set to be the management cluster you should be able to do an operation such as list the nodes in the cluster.
+With the current context set to be the management cluster you should be able to do an operation such as list the nodes in the cluster.
 
 ```execute-1
 kubectl get nodes

@@ -6,7 +6,7 @@ If the Kubernetes management cluster is only going to be used for testing or man
 
 The **Production** cluster type in comparison results in three control plane nodes being created, providing a level of redundancy in the event that one of the control plane nodes fails.
 
-For this guided installer choose the **Development** cluster type.
+For this guided installer we will use the **Development** cluster type.
 
 For the cluster type you next need to select the EC2 instance type to be used for the control plane nodes. This provides a very long list of choices. Which exact instance type you select will depend on the number of worker nodes and how the cluster is used.
 
@@ -27,7 +27,15 @@ In this case we are only deploying a Kubernetes management cluster and so under 
 
 Note that the "m3" instance types are old and are not available in all regions so you may need to do your homework to determine what is the next best option in the region you want to use. For 1-5 worker nodes, if "m3.medium" is not available, an alternative would be "m4.large".
 
-Having selected the EC2 instance type for the control plane nodes, give a name to your Kubernetes management cluster, or leave it blank if you want a name to be generated for you. If you do specify a name, that name must be compliant with DNS hostname requirements.
+Having selected the EC2 instance type for the control plane nodes, give a name to your Kubernetes management cluster. The name must be compliant with DNS hostname requirements.
+
+For this guided installer, set **MANAGEMENT CLUSTER NAME** to:
+
+```copy
+mgmt-cluster
+```
+
+The remaining instructions rely on this being the name of the management cluster, so do not leave the name field blank.
 
 In addition to selecting an EC2 instance type for the control plane nodes, you now need to also select the EC2 instance type for the worker nodes. These nodes have different requirements to the control plane nodes and what you use will depend on the type of application workloads you deploy.
 

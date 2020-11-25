@@ -1,4 +1,4 @@
-The next form that should now be presented is that for specifying the Virtual Private Cloud (VPC) settings for AWS. This is used to select an IP address range that will used when generating IP addresses for hosts created as part of the Kubernetes cluster, as well as pods and services within the Kubernetes cluster.
+The next form that should now be presented is that for specifying the Virtual Private Cloud (VPC) settings for AWS. This is used to select an IP address range that will be used when generating IP addresses for hosts created as part of the Kubernetes cluster, as well as pods and services within the Kubernetes cluster.
 
 ![](vpc-settings-for-aws-form.png)
 

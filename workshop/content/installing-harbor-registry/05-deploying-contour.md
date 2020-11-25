@@ -1,6 +1,6 @@
 Contour is an ingress controller for Kubernetes which uses the Envoy proxy as a reverse proxy and load balancer. In addition to supporting use of the standard Kubernetes Ingress resource, Contour implements a custom resource called ``HTTPProxy`` for more advanced functionality over and above the standard ingress mechanism.
 
-The Kubernetes resources used for deploying Contour can be found in the ``tkg-extensions-v1.2.0+vmware.1/extensions/ingress/contour`` directory.
+The Kubernetes resources used for deploying Contour can be found in the ``extensions/ingress/contour`` directory.
 
 Installation of Contour involves a number of steps as it is necessary to prepare the configuration which customizes the Contour deployment.
 
@@ -9,7 +9,7 @@ The first step is to create the namespace in which Contour will be deployed, alo
 To create these run:
 
 ```execute-1
-kubectl apply -f tkg-extensions-v1.2.0+vmware.1/extensions/ingress/contour/namespace-role.yaml
+kubectl apply -f extensions/ingress/contour/namespace-role.yaml
 ```
 
 This should output:
@@ -23,12 +23,12 @@ clusterrole.rbac.authorization.k8s.io/contour-extension-cluster-role created
 clusterrolebinding.rbac.authorization.k8s.io/contour-extension-cluster-rolebinding created
 ```
 
-The next step is to declare the configuration for Contour and sample configuration files are provided for this depending on what infrastructure provider is being used. The sample configuration for AWS EC2 can be found at ``tkg-extensions-v1.2.0+vmware.1/extensions/ingress/contour/aws/contour-data-values.yaml.example``.
+The next step is to declare the configuration for Contour and sample configuration files are provided for this depending on what infrastructure provider is being used. The sample configuration for AWS EC2 can be found in the file ``extensions/ingress/contour/aws/contour-data-values.yaml.example``.
 
 To view the contents of the same configuration run:
 
 ```execute-1
-cat tkg-extensions-v1.2.0+vmware.1/extensions/ingress/contour/aws/contour-data-values.yaml.example
+cat extensions/ingress/contour/aws/contour-data-values.yaml.example
 ```
 
 It should contain:
@@ -51,15 +51,15 @@ The configuration is in a format for use with the Carvel ``ytt`` template that i
 For our use case the default configuration is sufficient, so we can copy the sample configuration as is:
 
 ```execute-1
-cp tkg-extensions-v1.2.0+vmware.1/extensions/ingress/contour/aws/contour-data-values.yaml.example tkg-extensions-v1.2.0+vmware.1/extensions/ingress/contour/aws/contour-data-values.yaml
+cp extensions/ingress/contour/aws/contour-data-values.yaml.example extensions/ingress/contour/aws/contour-data-values.yaml
 ```
 
-If you a need to customize the configuration an explanation of the settings values that can be set are listed in the file ``tkg-extensions-v1.2.0+vmware.1/ingress/contour/README.md``.
+If you need to customize the configuration an explanation of the settings values that can be set are listed in the file ``ingress/contour/README.md``.
 
 Having copied and customized the configuration if necessary, a Kubernetes secret needs to be created which holds the configuration.
 
 ```execute-1
-kubectl create secret generic contour-data-values --from-file=values.yaml=tkg-extensions-v1.2.0+vmware.1/extensions/ingress/contour/aws/contour-data-values.yaml -n tanzu-system-ingress
+kubectl create secret generic contour-data-values --from-file=values.yaml=extensions/ingress/contour/aws/contour-data-values.yaml -n tanzu-system-ingress
 ```
 
 This should output:
@@ -73,7 +73,7 @@ This secret is created in the namespace ``tanzu-system-ingress`` created above f
 To perform the deployment of Contour run:
 
 ```execute-1
-kubectl apply -f tkg-extensions-v1.2.0+vmware.1/extensions/ingress/contour/contour-extension.yaml
+kubectl apply -f extensions/ingress/contour/contour-extension.yaml
 ```
 
 This should output:

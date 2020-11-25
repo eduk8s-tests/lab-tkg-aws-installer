@@ -1,11 +1,11 @@
 The Kubernetes ``cert-manager`` is used to manage the generation of certificates for use with secure connections between services, including use with externally exposed ingress routes.
 
-The Kubernetes resources for deploying ``cert-manager`` can be found in the ``tkg-extensions-v1.2.0+vmware.1/cert-manager`` directory.
+The Kubernetes resources for deploying ``cert-manager`` can be found in the ``cert-manager`` directory.
 
 To deploy ``cert-manager`` run:
 
 ```execute-1
-kubectl apply -f tkg-extensions-v1.2.0+vmware.1/cert-manager
+kubectl apply -f cert-manager
 ```
 
 This will generate a long list of resources which were created.

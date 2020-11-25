@@ -12,16 +12,16 @@ To see the current management cluster, run:
 tkg get management-clusters
 ```
 
-You should see output similar to:
+You should see the output:
 
 ```
-MANAGEMENT-CLUSTER-NAME        CONTEXT-NAME                                                   STATUS  
-tkg-mgmt-aws-20201104001924 *  tkg-mgmt-aws-20201104001924-admin@tkg-mgmt-aws-20201104001924  Success 
+MANAGEMENT-CLUSTER-NAME  CONTEXT-NAME                     STATUS  
+mgmt-cluster *           mgmt-cluster-admin@mgmt-cluster  Success  
 ```
 
 The only management cluster you should see is the one you just created.
 
-If you didn't provide a name for the management cluster, a generated name will have been used.
+If a name for the management cluster hadn't been provided, a generated name will have been used.
 
 The '*' along side the name of the cluster indicates it is the current management cluster which subsequent actions performed using ``tkg`` will operate against.
 

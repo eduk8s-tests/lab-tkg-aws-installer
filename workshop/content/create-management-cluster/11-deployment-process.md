@@ -16,7 +16,7 @@ As the intent is for the Kubernetes cluster in AWS to be the management cluster,
 
 With the management cluster now running in AWS, the local management cluster created using Kind is deleted. The local configuration for ``tkg`` is updated to point to the management cluster in AWS, and the local configuration for ``kubectl`` also updated to refer to the same cluster.
 
-This whole process can take a little while, especially the first time it is run, as the container images required to run the Kind cluster and implement the cluster management API need to be pulled down to the local machine and run. This then needs to be repeated in AWS, although instead of a Kind cluster being used in that case, it is Tanzu Kubernetes Grid (TKG) cluster which is beind deployed to AWS.
+This whole process can take a little while, especially the first time it is run, as the container images required to run the Kind cluster and implement the cluster management API need to be pulled down to the local machine and run. This then needs to be repeated in AWS, although instead of a Kind cluster being used in that case, it is a Tanzu Kubernetes Grid (TKG) cluster which is beind deployed to AWS.
 
 When the process is complete, the ``tkg`` installer should output in the log view within the browser the following messages.
 

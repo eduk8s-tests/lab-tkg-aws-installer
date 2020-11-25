@@ -8,11 +8,11 @@ To see what current contexts are registered, run:
 kubectl config get-contexts
 ```
 
-You should see output similar to the following:
+You should see the output:
 
 ```
-CURRENT   NAME                                                            CLUSTER                       AUTHINFO                            NAMESPACE
-*         tkg-mgmt-aws-20201119022317-admin@tkg-mgmt-aws-20201119022317   tkg-mgmt-aws-20201119022317   tkg-mgmt-aws-20201119022317-admin
+CURRENT   NAME                              CLUSTER        AUTHINFO             NAMESPACE
+*         mgmt-cluster-admin@mgmt-cluster   mgmt-cluster   mgmt-cluster-admin
 ```
 
 At present only the management cluster should be listed.
@@ -39,9 +39,9 @@ kubectl config get-contexts
 This should generate output similar to:
 
 ```
-CURRENT   NAME                                                            CLUSTER                       AUTHINFO                            NAMESPACE
-*         tkg-mgmt-aws-20201119022317-admin@tkg-mgmt-aws-20201119022317   tkg-mgmt-aws-20201119022317   tkg-mgmt-aws-20201119022317-admin   
-          tkg-services-admin@tkg-services                                 tkg-services                  tkg-services-admin  
+CURRENT   NAME                              CLUSTER        AUTHINFO             NAMESPACE
+*         mgmt-cluster-admin@mgmt-cluster   mgmt-cluster   mgmt-cluster-admin   
+          tkg-services-admin@tkg-services   tkg-services   tkg-services-admin  
 ```
 
 The management cluster is still selected as the current context, so you must set the current context to the ``tkg-services`` cluster by running:

@@ -1,11 +1,19 @@
 The TMC extension manager implements a Kubernetes API providing services for tracking the installation of extensions. Although it references "Tanzu Mission Control" within the name, it is not the whole TMC product which is being installed, but is an API which just so happens to be usable in both TMC clusters and TKG clusters.
 
-The Kubernetes resources for deploying the TMC extension manager can be found in the file ``tkg-extensions-v1.2.0+vmware.1/extensions/tmc-extension-manager.yaml``.
+The extensions bundle which contains the TMC extension manager and other extensions was already downloaded previously and can be found in the ``~/work/tkg-extensions-v1.2.0+vmware.1`` directory.
+
+Change the working directory to that directory.
+
+```execute-1
+cd ~/work/tkg-extensions-v1.2.0+vmware.1
+```
+
+The Kubernetes resources for deploying the TMC extension manager can be found in the file ``extensions/tmc-extension-manager.yaml``.
 
 To deploy the Kapp controller run:
 
 ```execute-1
-kubectl apply -f tkg-extensions-v1.2.0+vmware.1/extensions/tmc-extension-manager.yaml
+kubectl apply -f extensions/tmc-extension-manager.yaml
 ```
 
 This should output:

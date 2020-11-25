@@ -2,7 +2,7 @@ The TKG extensions which are supported are not totally independent of each other
 
 If you intend setting up a shared Harbor registry there is also an additional requirement that it be deployed to a dedicated cluster before creating any workload clusters which would need to use it. This is because the management cluster needs to be configured with details of the Harbor registry with those details being injected into a workload cluster at the point the workload cluster is first created.
 
-> NOTE: Details of the Harbor registry will subsequently be injected into an existing workload cluster which had been created prior to Harbor being deployed, when the existing workload cluster is upgraded. It is not known at this point whether this process of injecting details into an existing cluster can be triggered manually.
+> NOTE: Details of the Harbor registry will only be injected into an existing workload cluster which had been created prior to Harbor being deployed, when the existing workload cluster is upgraded. It is not known at this point whether this process of injecting details into an existing cluster can be triggered manually.
 
 The order of the next set of installation steps, once you have the management cluster created, is as follows:
 
@@ -20,7 +20,7 @@ With the Harbor registry deployed, the management cluster then needs to be setup
 Once these steps have been completed, then additional workload clusters can be created for deploying applications. Assuming that at least Contour will be added to each of these workload clusters, the steps required for each workload cluster is as follows:
 
 * Create the workload cluster for deploying applications.
-* Install in the shared services cluster the TMC extension manager, Carvel Kapp controller and Kubernetes ``cert-manager``.
-* Install in the shared services cluster the Contour ingress controller.
+* Install in the workload cluster the TMC extension manager, Carvel Kapp controller and Kubernetes ``cert-manager``.
+* Install in the workload cluster the Contour ingress controller.
 
 If Contour is not being installed to a workload cluster, the TMC extension manager, Carvel Kapp controller and Kubernetes ``cert-manager`` must still be installed if deploying any other TKG extension.

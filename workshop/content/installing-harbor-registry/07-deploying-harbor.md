@@ -1,6 +1,6 @@
 Harbor is a registry for storing content such as container images and Helm charts.
 
-The Kubernetes resources used for deploying Harbor can be found in the ``tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor`` directory.
+The Kubernetes resources used for deploying Harbor can be found in the ``extensions/registry/harbor`` directory.
 
 Installation of Harbor involves a number of steps as it is necessary to prepare the configuration which customizes the Harbor deployment.
 
@@ -9,7 +9,7 @@ The first step is to create the namespace in which Harbor will be deployed, alon
 To create these run:
 
 ```execute-1
-kubectl apply -f tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/namespace-role.yaml
+kubectl apply -f extensions/registry/harbor/namespace-role.yaml
 ```
 
 This should output:
@@ -23,12 +23,12 @@ clusterrole.rbac.authorization.k8s.io/harbor-extension-cluster-role created
 clusterrolebinding.rbac.authorization.k8s.io/harbor-extension-cluster-rolebinding created
 ```
 
-The next step is to declare the configuration for Harbor and a sample configuration file is provided for this which can be found at ``tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml.example``.
+The next step is to declare the configuration for Harbor and a sample configuration file is provided for this which can be found at ``extensions/registry/harbor/harbor-data-values.yaml.example``.
 
 Make a copy of the example file:
 
 ```execute-1
-cp tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml.example tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml
+cp extensions/registry/harbor/harbor-data-values.yaml.example extensions/registry/harbor/harbor-data-values.yaml
 ```
 
 The key configuration settings in this file are the hostname to be used to access the Harbor instance, and an initial administrator password.
@@ -36,13 +36,13 @@ The key configuration settings in this file are the hostname to be used to acces
 There are also settings for defining other passwords and secrets used internally between components of Harbor but these can be generated as you wouldn't normally need to know them. To set random passwords and secrets in the settings file, run:
 
 ```execute-1
-tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/generate-passwords.sh tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml
+extensions/registry/harbor/generate-passwords.sh extensions/registry/harbor/harbor-data-values.yaml
 ```
 
 For the administrator password, change the generated value to a known password which you can remember. To set the administrator password to "Harbor1234" run:
 
 ```execute-1
-sed -i "s/^harborAdminPassword:.*/harborAdminPassword: Harbor1234/" tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml
+sed -i "s/^harborAdminPassword:.*/harborAdminPassword: Harbor1234/" extensions/registry/harbor/harbor-data-values.yaml
 ```
 
 Next you will want to override the hostname for the Harbor instance.
@@ -72,7 +72,7 @@ HARBOR_HOSTNAME=harbor.$CONTOUR_ROUTER_ADDRESS.nip.io; echo $HARBOR_HOSTNAME
 To update the settings file with this hostname run:
 
 ```execute-1
-sed -i "s/^hostname:.*/hostname: $HARBOR_HOSTNAME/" tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml
+sed -i "s/^hostname:.*/hostname: $HARBOR_HOSTNAME/" extensions/registry/harbor/harbor-data-values.yaml
 ```
 
 For a production instance of Harbor you would want to double check whether any other settings need to be changed as well.
@@ -80,7 +80,7 @@ For a production instance of Harbor you would want to double check whether any o
 Once done with any changes create a secret from the settings file by running:
 
 ```execute-1
-kubectl create secret generic harbor-data-values --from-file=values.yaml=tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-data-values.yaml -n tanzu-system-registry
+kubectl create secret generic harbor-data-values --from-file=values.yaml=extensions/registry/harbor/harbor-data-values.yaml -n tanzu-system-registry
 ```
 
 This should output:
@@ -94,7 +94,7 @@ This secret is created in the namespace ``tanzu-system-registry`` created above 
 To perform the deployment of Harbor run:
 
 ```execute-1
-kubectl apply -f tkg-extensions-v1.2.0+vmware.1/extensions/registry/harbor/harbor-extension.yaml
+kubectl apply -f extensions/registry/harbor/harbor-extension.yaml
 ```
 
 This should output:
@@ -166,3 +166,9 @@ echo https://$HARBOR_HOSTNAME/
 With the present configuration self signed certificates are being used, so you will need to tell the browser to skip verification and allow you access.
 
 To login to the Harbor instance, use the username "admin" and password "Harbor1234".
+
+Because self signed certificates are being used, when the workload clusters that will use the Harbor instance are later created, they will need to be supplied with the cerificate authority (CA) used when creating the self signed certificates so the certificates can be verified. To extract the CA from the Harbor deployment for later use, run:
+
+```execute-1
+kubectl -n tanzu-system-registry get secret harbor-tls -o=jsonpath="{.data.ca\.crt}" | base64 -d > ~/work/harbor-tls-ca-crt.txt
+```
