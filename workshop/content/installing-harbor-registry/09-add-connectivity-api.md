@@ -81,7 +81,7 @@ Set ``registry.bootstrapProxy`` to the ``false``.
 sed -i 's/^\( *\)bootstrapProxy: *$/\1bootstrapProxy: "false"/' tanzu-registry/values.yaml
 ```
 
-This is not required as for this guided installer we will not be populating the Harbor instance with images used when creating workload clusters.
+This is not required as for this guided installer we will not be populating the Harbor instance with images used when creating workload clusters. Also, because we aren't overriding DNS and are relying on a public hostname, the IP address also shouldn't strictly be used, but we set it anyway just in case.
 
 Finally, we need to set ``registry.rootCA``. This has to be set to the certificate authority (CA) used for the inbound ingress of the Harbor instance.
 

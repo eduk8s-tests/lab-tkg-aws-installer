@@ -6,12 +6,10 @@ Double check that the workload cluster has been deleted by running:
 tkg get clusters
 ```
 
-To delete the management cluster use the ``tkg delete management-cluster`` command. You will need to provide the name of the management cluster as argument.
-
-Since for this guided installer a generated name may have been used for the management cluster, you can use the command:
+To delete the management cluster use the ``tkg delete management-cluster`` command, providing the name of the management cluster as argument:
 
 ```execute-1
-tkg delete management-cluster `tkg get management-clusters -o json | jq -r ".[0].name"`
+tkg delete management-cluster mgmt-cluster
 ```
 
 This will confirm that you want to delete the management cluster. Enter ``y`` when prompted.
