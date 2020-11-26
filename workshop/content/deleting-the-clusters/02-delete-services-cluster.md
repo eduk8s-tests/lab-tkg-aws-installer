@@ -74,7 +74,7 @@ tkg get clusters
 and you should see the status as being deleted:
 
 ```
-NAME        NAMESPACE  STATUS    CONTROLPLANE  WORKERS  KUBERNETES        ROLES  
+NAME          NAMESPACE  STATUS    CONTROLPLANE  WORKERS  KUBERNETES        ROLES  
 tkg-services  default    deleting  1/1                    v1.19.1+vmware.2  <none> 
 ```
 
