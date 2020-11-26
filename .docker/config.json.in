@@ -1,0 +1,9 @@
+{
+    "auths": {
+        "https://$HARBOR_HOSTNAME/v1/": {
+            "username": "admin",
+            "password":"Harbor1234",
+            "auth":"YWRtaW46SGFyYm9yMTIzNA=="
+        }
+    }
+}
