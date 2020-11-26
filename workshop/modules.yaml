@@ -65,8 +65,6 @@ modules:
         name: Label Services Cluster
     installing-harbor-registry/09-add-connectivity-api:
         name: Add Connectivity API
-    installing-harbor-registry/10-annotate-harbor-route:
-        name: Annotate Harbor Route
     deleting-the-clusters/01-delete-application-cluster:
         name: Delete Application Cluster
     deleting-the-clusters/02-delete-services-cluster:

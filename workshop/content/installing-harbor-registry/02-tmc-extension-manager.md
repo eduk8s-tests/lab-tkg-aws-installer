@@ -10,7 +10,7 @@ cd ~/work/tkg-extensions-v1.2.0+vmware.1
 
 The Kubernetes resources for deploying the TMC extension manager can be found in the file ``extensions/tmc-extension-manager.yaml``.
 
-To deploy the Kapp controller run:
+To deploy the TMC extensions manager run:
 
 ```execute-1
 kubectl apply -f extensions/tmc-extension-manager.yaml

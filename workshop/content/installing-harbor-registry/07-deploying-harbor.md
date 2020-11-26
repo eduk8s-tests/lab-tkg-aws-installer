@@ -170,5 +170,5 @@ To login to the Harbor instance, use the username "admin" and password "Harbor12
 Because self signed certificates are being used, when the workload clusters that will use the Harbor instance are later created, they will need to be supplied with the cerificate authority (CA) used when creating the self signed certificates so the certificates can be verified. To extract the CA from the Harbor deployment for later use, run:
 
 ```execute-1
-kubectl -n tanzu-system-registry get secret harbor-tls -o=jsonpath="{.data.ca\.crt}" | base64 -d > ~/work/harbor-tls-ca-crt.txt
+mkdir ~/work/harbor-tls && kubectl -n tanzu-system-registry get secret harbor-tls -o=jsonpath="{.data.ca\.crt}" | base64 -d > ~/work/harbor-tls/ca.crt
 ```

@@ -35,7 +35,6 @@ modules:
     - installing-harbor-registry/07-deploying-harbor
     - installing-harbor-registry/08-label-services-cluster
     - installing-harbor-registry/09-add-connectivity-api
-    - installing-harbor-registry/10-annotate-harbor-route
     - deleting-the-clusters/01-delete-application-cluster
     - deleting-the-clusters/02-delete-services-cluster
     - deleting-the-clusters/03-delete-management-cluster

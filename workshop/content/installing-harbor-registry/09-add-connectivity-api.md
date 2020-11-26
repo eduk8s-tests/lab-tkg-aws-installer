@@ -85,11 +85,11 @@ This is not required as for this guided installer we will not be populating the 
 
 Finally, we need to set ``registry.rootCA``. This has to be set to the certificate authority (CA) used for the inbound ingress of the Harbor instance.
 
-The CA was previously saved to the file ``~/work/harbor-tls-ca-crt.txt``. To add this to the settings file run:
+The CA was previously saved to the file ``~/work/harbor-tls/ca.crt``. To add this to the settings file run:
 
 ```execute-1
 sed -i "s/^\( *\)rootCA: *$/\1rootCA: |/" tanzu-registry/values.yaml && \
-  cat ~/work/harbor-tls-ca-crt.txt | sed -e 's/^/    /' | sed -i "/^\( *\)rootCA:/r /dev/stdin" tanzu-registry/values.yaml
+  cat ~/work/harbor-tls/ca.crt | sed -e 's/^/    /' | sed -i "/^\( *\)rootCA:/r /dev/stdin" tanzu-registry/values.yaml
 ```
 
 To see the end result of the changes run:
