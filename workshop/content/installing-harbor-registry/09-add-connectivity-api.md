@@ -151,3 +151,6 @@ To monitor the the status of the deployment run:
 ```execute-1
 kubectl rollout status deployment/tkg-connectivity-operator -n tanzu-system-connectivity
 ```
+
+Note that the TKG documentation also talks about needing to add an annotation to the resource for the ingress route of Harbor in the shared services cluster, with the value of ``registry.vip``. In this case we do not need to do that as we set ``registry.bootstrapProxy`` to ``false`` and are not using the Harbor registry to host the container images used to create the TKG clusters.
+

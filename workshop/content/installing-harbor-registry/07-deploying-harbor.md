@@ -50,7 +50,7 @@ Next you will want to override the hostname for the Harbor instance.
 If you own a domain name and control your DNS server, you can setup a hostname in DNS. This should be setup to use a DNS CNAME record which refers to the hostname of the inbound ingress router for the Contour instance you deployed earlier. You can get the hostname of the inbound ingress router by running:
 
 ```execute-1
-CONTOUR_ROUTER_HOSTNAME=`kubectl get svc envoy -n tanzu-system-ingress -o jsonpath='{.status.loadBalancer.ingress[0].hostname}{"\n"}'`; echo $CONTOUR_ROUTER_HOSTNAME
+SERVICES_ROUTER_HOSTNAME=`kubectl get svc envoy -n tanzu-system-ingress -o jsonpath='{.status.loadBalancer.ingress[0].hostname}{"\n"}'`; echo $SERVICES_ROUTER_HOSTNAME
 ```
 
 If you are using your own hostname for the Harbor instance and have an SSL certificate covering the hostname, you would need to add the details of it into the settings file.
@@ -60,13 +60,13 @@ For this guided installer, rather than rely on you having your own domain name, 
 To do this we first need to determine the IP address corresponding to the inbound ingress router for the Contour instance. To determine this run:
 
 ```execute-1
-CONTOUR_ROUTER_ADDRESS=`python3 -c "import socket; print(socket.gethostbyname('$CONTOUR_ROUTER_HOSTNAME'))"`; echo $CONTOUR_ROUTER_ADDRESS
+SERVICES_ROUTER_ADDRESS=`python3 -c "import socket; print(socket.gethostbyname('$SERVICES_ROUTER_HOSTNAME'))"`; echo $SERVICES_ROUTER_ADDRESS
 ```
 
 Next we will construct a ``nip.io`` hostname for Harbor using this IP address.
 
 ```execute-1
-HARBOR_HOSTNAME=harbor.$CONTOUR_ROUTER_ADDRESS.nip.io; echo $HARBOR_HOSTNAME
+HARBOR_HOSTNAME=harbor.$SERVICES_ROUTER_ADDRESS.nip.io; echo $HARBOR_HOSTNAME
 ```
 
 To update the settings file with this hostname run:

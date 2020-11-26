@@ -67,9 +67,11 @@ modules:
         name: Add Connectivity API
     installing-harbor-registry/10-annotate-harbor-route:
         name: Annotate Harbor Route
-    deleting-the-clusters/01-delete-workload-clusters:
-        name: Delete Workload Clusters
-    deleting-the-clusters/02-delete-management-cluster:
+    deleting-the-clusters/01-delete-application-cluster:
+        name: Delete Application Cluster
+    deleting-the-clusters/02-delete-services-cluster:
+        name: Delete Services Cluster
+    deleting-the-clusters/03-delete-management-cluster:
         name: Delete Management Cluster
     99-additional-resources:
         name: Additional Resources
