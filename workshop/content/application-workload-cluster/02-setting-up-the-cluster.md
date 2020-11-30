@@ -6,6 +6,8 @@ Change back to the directory ``~/work/tkg-extensions-v1.2.0+vmware.1``:
 cd ~/work/tkg-extensions-v1.2.0+vmware.1
 ```
 
+Before starting, note that since all these steps are condensed together in quick succession, you may find that steps to verify results may not work. Be patient and let the preceeding step run for a while and try the verification step again. This applies to waiting for the deployments and for any ingress to be created.
+
 To deploy the TMC extensions manager run:
 
 ```execute-1

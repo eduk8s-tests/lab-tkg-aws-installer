@@ -19,10 +19,10 @@ Monitor the deployment of the server:
 kubectl rollout status deployment/nginx -n default
 ```
 
-Once the deploy was completed, test that the nginx server is responding by running:
+Once the deployment has completed, test that the nginx server is responding by running:
 
 ```execute-1
-curl nginx.$CLUSTER_ROUTER_ADDRESS.nip.io/
+curl http://nginx.$CLUSTER_ROUTER_ADDRESS.nip.io/
 ```
 
 You should see the generic response page for an unconfigured nginx server.
