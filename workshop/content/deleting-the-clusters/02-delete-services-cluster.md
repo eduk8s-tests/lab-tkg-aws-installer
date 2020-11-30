@@ -24,7 +24,7 @@ To monitor progress of the deployment being deleted run:
 kubectl get app harbor -n tanzu-system-registry -w
 ```
 
-If deletion was immediate, this will return that the application is not found, other this should start outputing a status line saying the deployment is being deleted.
+If deletion was immediate, this will return that the resource is not found, other this should start outputing a status line saying the deployment is being deleted.
 
 ```
 NAME     DESCRIPTION   SINCE-DEPLOY   AGE
@@ -37,7 +37,7 @@ The line with the description "Deleting" will be periodically output until the d
 session: 1
 ```
 
-To double check it has been deleted you can run:
+If deletion hadn't been immediate, you can double check it has now been deleted by running:
 
 ```execute-1
 kubectl get app harbor -n tanzu-system-registry
