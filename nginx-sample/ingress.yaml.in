@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  rules:
+  - host: nginx.${CLUSTER_ROUTER_ADDRESS}.nip.io
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: nginx
+          servicePort: 80

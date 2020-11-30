@@ -35,6 +35,10 @@ modules:
     - installing-harbor-registry/07-deploying-harbor
     - installing-harbor-registry/08-label-services-cluster
     - installing-harbor-registry/09-add-connectivity-api
+    - application-workload-cluster/01-cluster-for-applications
+    - application-workload-cluster/02-setting-up-the-cluster
+    - application-workload-cluster/03-load-container-images
+    - application-workload-cluster/04-deploying-nginx-server
     - deleting-the-clusters/01-delete-application-cluster
     - deleting-the-clusters/02-delete-services-cluster
     - deleting-the-clusters/03-delete-management-cluster

@@ -69,10 +69,10 @@ Set ``registry.fqdn`` to be the hostname for the Harbor instance. We have the ho
 sed -i "s/^\( *\)fqdn: *$/\1fqdn: $HARBOR_HOSTNAME/" tanzu-registry/values.yaml
 ```
 
-Set ``registry.vip`` to be the IP address of the inbound ingress for the Contour load balancer. We have the IP address saved away in the ``CONTOUR_ROUTER_ADDRESS`` environment variable, so run:
+Set ``registry.vip`` to be the IP address of the inbound ingress for the Contour load balancer. We have the IP address saved away in the ``SERVICES_ROUTER_ADDRESS`` environment variable, so run:
 
 ```execute-1
-sed -i "s/^\( *\)vip: *$/\1vip: $CONTOUR_ROUTER_ADDRESS/" tanzu-registry/values.yaml
+sed -i "s/^\( *\)vip: *$/\1vip: $SERVICES_ROUTER_ADDRESS/" tanzu-registry/values.yaml
 ```
 
 Set ``registry.bootstrapProxy`` to the ``false``.

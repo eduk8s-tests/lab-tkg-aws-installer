@@ -90,7 +90,7 @@ The workload cluster is then all setup ready to deploy an application. Before we
 First grab the hostname of the inbound ingress router.
 
 ```execute-1
-CLUSTER_ROUTER_HOSTNAME=`kubectl get svc envoy -n tanzu-system-ingress -o jsonpath='{.status.loadBalancer.ingress[0].hostname}{"\n"}'`; echo $CLUSTER_ROUTER_HOSTNAME
+CLUSTER_ROUTER_HOSTNAME=`kubectl get svc envoy -n tanzu-system-ingress -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'`; echo $CLUSTER_ROUTER_HOSTNAME
 ```
 
 Then work out the IP address of it.

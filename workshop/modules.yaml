@@ -65,6 +65,14 @@ modules:
         name: Label Services Cluster
     installing-harbor-registry/09-add-connectivity-api:
         name: Add Connectivity API
+    application-workload-cluster/01-cluster-for-applications:
+        name: Cluster for Applications
+    application-workload-cluster/02-setting-up-the-cluster:
+        name: Setting up the Cluster
+    application-workload-cluster/03-load-container-images:
+        name: Load Container Images
+    application-workload-cluster/04-deploying-nginx-server:
+        name: Deploying nginx Server
     deleting-the-clusters/01-delete-application-cluster:
         name: Delete Application Cluster
     deleting-the-clusters/02-delete-services-cluster:
