@@ -27,8 +27,12 @@ To run the installer execute the command:
 in the current directory.
 
 If the installer hasn't been run previously, this will first build the
-installer image. Once the build has completed and the container started,
-the installer web interface can then be accessed at the URL:
+installer image. If you had run it previously but had pulled a newer
+version from the remote repository, you can pass the ``--build`` argument
+to verify whether a rebuild is required.
+
+Once the build has completed and the container started, the installer web
+interface can then be accessed at the URL:
 
 * http://workshop.127.0.0.1.nip.io:10080
 
