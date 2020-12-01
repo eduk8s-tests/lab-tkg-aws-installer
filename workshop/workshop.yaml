@@ -31,7 +31,7 @@ modules:
     - installing-harbor-registry/03-carvel-kapp-controller
     - installing-harbor-registry/04-kubernetes-cert-manager
     - installing-harbor-registry/05-deploying-contour
-    - installing-harbor-registry/06-accessing-envoy-ui
+    #- installing-harbor-registry/06-accessing-envoy-ui
     - installing-harbor-registry/07-deploying-harbor
     - installing-harbor-registry/08-label-services-cluster
     - installing-harbor-registry/09-add-connectivity-api
